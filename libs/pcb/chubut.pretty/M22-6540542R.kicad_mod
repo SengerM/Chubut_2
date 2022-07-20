@@ -27,4 +27,9 @@
   (pad "3" smd rect (at 0 9) (size 2 1) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp bd8e74f0-b4c9-4bd1-afaa-e5b62d92561b))
   (pad "4" smd rect (at 0 11) (size 2 1) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 1c7b1d9e-58a0-4e18-a575-cdb8fde90c51))
   (pad "5" smd rect (at 0 13) (size 2 1) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 0a757c75-733a-4cb8-b9f7-ef48d6d027cd))
+  (model "/home/alf/cernbox/projects/LGAD_stability/Chubut_2/libs/3D/M22-6540542R.stp"
+    (offset (xyz 5 -9 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 90 90))
+  )
 )
