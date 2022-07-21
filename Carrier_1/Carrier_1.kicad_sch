@@ -4,6 +4,13 @@
 
   (paper "A4")
 
+  (title_block
+    (title "LGAD carrier board compatible with Chubut 2")
+    (date "2022-07-20")
+    (company "Universität Zürich")
+    (comment 1 "Matias Senger")
+  )
+
   (lib_symbols
     (symbol "Connector:Conn_01x05_Male" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (id 0) (at 0 7.62 0)

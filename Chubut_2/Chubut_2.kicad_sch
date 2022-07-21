@@ -4,6 +4,14 @@
 
   (paper "A4")
 
+  (title_block
+    (title "Chubut 2")
+    (date "2022-07-20")
+    (company "Universität Zürich")
+    (comment 1 "Matias Senger")
+    (comment 2 "Two channel readout board for LGAD")
+  )
+
   (lib_symbols
     (symbol "Connector:Conn_01x05_Female" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (id 0) (at 0 7.62 0)
@@ -1376,7 +1384,7 @@
     (property "Reference" "J6" (id 0) (at 247.396 48.6409 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "RFShield_TwoPieces" (id 1) (at 247.396 51.1809 0)
+    (property "Value" "LGAD shield" (id 1) (at 247.396 51.1809 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "chubut:MS374-10F" (id 2) (at 228.092 54.356 0)
@@ -1618,7 +1626,7 @@
       (reference "J5") (unit 1) (value "Out 2") (footprint "chubut:MMCX-J-P-H-RA-TH1")
     )
     (path "/e5043ea0-523c-435b-8546-9f8336da6620"
-      (reference "J6") (unit 1) (value "RFShield_TwoPieces") (footprint "chubut:MS374-10F")
+      (reference "J6") (unit 1) (value "LGAD shield") (footprint "chubut:MS374-10F")
     )
     (path "/6bff298f-e9c8-4a51-9dad-e7c53a422dca/493d19b6-e14d-4f48-8c29-14fdecf7e372"
       (reference "J7") (unit 1) (value "RFShield_OnePiece") (footprint "chubut:MS148-10S")
