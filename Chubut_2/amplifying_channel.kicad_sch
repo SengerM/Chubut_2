@@ -964,7 +964,7 @@
     (property "Footprint" "chubut:TSFP-4-1" (id 2) (at 155.702 104.394 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (id 3) (at 150.622 106.934 0)
+    (property "Datasheet" "https://www.infineon.com/dgdl/Infineon-BFP840FESD-DS-v02_00-EN.pdf?fileId=5546d46265f064ff01663896c6294eb9" (id 3) (at 150.622 106.934 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Digikey" "https://www.digikey.com/en/products/detail/infineon-technologies/BFP840FESDH6327XTSA1/3911480?s=N4IgTCBcDaIEIDEAKAOALABgQUQMoBEQBdAXyA" (id 4) (at 150.622 106.934 0)
