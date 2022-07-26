@@ -18,9 +18,9 @@
     (options (clearance outline) (anchor rect))
     (primitives
       (gr_line (start -3.4 0) (end 2.9 0) (width 1.5))
-  (gr_arc (start -4.55 1.15) (mid -4.213174 0.336828) (end -3.400002 0) (width 1.5))
+  (gr_arc (start -4.55 1.15) (mid -4.213883 0.337538) (end -3.402009 0.000002) (width 1.5))
       (gr_line (start -4.55 13.35) (end -4.55 1.15) (width 1.5))
-  (gr_arc (start -3.4 14.5) (mid -4.212465 14.163876) (end -4.549998 13.351995) (width 1.5))
+  (gr_arc (start -3.4 14.5) (mid -4.211755 14.164584) (end -4.549992 13.354001) (width 1.5))
       (gr_line (start -3.4 14.5) (end 2.9 14.5) (width 1.5))
   (gr_arc (start 4.05 13.35) (mid 3.713173 14.163173) (end 2.9 14.5) (width 1.5))
       (gr_line (start 4.05 13.35) (end 4.05 1.15) (width 1.5))
