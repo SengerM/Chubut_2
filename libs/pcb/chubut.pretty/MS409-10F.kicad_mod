@@ -18,9 +18,9 @@
     (options (clearance outline) (anchor rect))
     (primitives
       (gr_line (start -8.75 0) (end 8.75 0) (width 1.5))
-  (gr_arc (start -10.6 1.85) (mid -10.058148 0.541852) (end -8.75 0) (width 1.5))
+  (gr_arc (start -10.6 1.85) (mid -10.05815 0.541853) (end -8.750004 0) (width 1.5))
       (gr_line (start -10.6 38.75) (end -10.6 1.85) (width 1.5))
-  (gr_arc (start -8.75 40.6) (mid -10.058148 40.058148) (end -10.6 38.75) (width 1.5))
+  (gr_arc (start -8.75 40.6) (mid -10.058147 40.05815) (end -10.6 38.750004) (width 1.5))
       (gr_line (start 8.75 40.6) (end -8.75 40.6) (width 1.5))
   (gr_arc (start 10.6 38.75) (mid 10.058148 40.058148) (end 8.75 40.6) (width 1.5))
       (gr_line (start 10.6 1.85) (end 10.6 38.75) (width 1.5))
@@ -30,8 +30,13 @@
   (pad "1" smd rect (at 10.6 0 180) (size 1 36.9) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 768a5600-dd45-46fe-8092-5b2ff015aff8))
   (pad "1" smd rect (at -10.6 0 180) (size 1 36.9) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp af566333-98d0-4508-bdfd-64ac4837b773))
   (model "/home/alf/cernbox/projects/LGAD_stability/Chubut_2/libs/3D/MS409-10F.step"
-    (offset (xyz 0 0 2.5))
+    (offset (xyz 0 0 4.5))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))
+  )
+  (model "/home/alf/cernbox/projects/LGAD_stability/Chubut_2/libs/3D/shield_supplement.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 90))
   )
 )
