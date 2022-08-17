@@ -55,7 +55,38 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "clearance|14250000|4700000|9fcf1c7d-3c0a-46e7-9a9d-1dcfd4cc9c1d|3a9b3310-7e6e-4435-9c71-95eeef6f2195",
+        "clearance|14250000|4730000|9fcf1c7d-3c0a-46e7-9a9d-1dcfd4cc9c1d|e38df032-baca-45ff-a7cb-c516c2721bab",
+        "clearance|14845000|27905000|4bcc3db1-7b1f-4b8f-8234-575fbf974a33|50f55bd5-3df7-4246-ae75-6c12ca7e2211",
+        "clearance|14845000|29175000|4bcc3db1-7b1f-4b8f-8234-575fbf974a33|451bb45d-19d2-4a36-b9ad-2c7671a4394f",
+        "clearance|15480000|27270000|52072af2-4def-4af2-b0eb-c20474fd5e2d|50f55bd5-3df7-4246-ae75-6c12ca7e2211",
+        "clearance|15480000|27270000|52072af2-4def-4af2-b0eb-c20474fd5e2d|f3be34df-0c74-4f27-941a-e9e7884035a7",
+        "clearance|15695000|3330000|92600c40-52d3-4d7e-8f44-bf0a2be1abc4|e38df032-baca-45ff-a7cb-c516c2721bab",
+        "clearance|16115000|27905000|4bcc3db1-7b1f-4b8f-8234-575fbf974a33|f3be34df-0c74-4f27-941a-e9e7884035a7",
+        "clearance|16115000|29175000|4bcc3db1-7b1f-4b8f-8234-575fbf974a33|383b218c-7557-484d-95ca-5676f7ba02c3",
+        "clearance|25745000|3700000|979adb84-c2cf-4329-bd25-d7822f7915a5|f9854a54-5723-46f2-8044-ae33385fcc16",
+        "clearance|30500000|500000|34d5c9f5-321d-4cbc-981e-5694c765853e|28e4c7f2-a2c8-4605-b49d-56d7c2b8c67a",
+        "clearance|32000000|500000|34d5c9f5-321d-4cbc-981e-5694c765853e|c26da67d-af62-4d8f-a5b7-98f11a7e6c81",
+        "clearance|34000000|500000|34d5c9f5-321d-4cbc-981e-5694c765853e|123eb273-5089-43e5-9aa7-ca9d2edecf28",
+        "clearance|34795000|4665000|8461f074-abf2-436a-a079-18c53e7db140|f078d4fa-1a43-4bb6-856a-96721427bb1c",
+        "clearance|34935000|4665000|8461f074-abf2-436a-a079-18c53e7db140|f078d4fa-1a43-4bb6-856a-96721427bb1c",
+        "clearance|36500000|500000|34d5c9f5-321d-4cbc-981e-5694c765853e|df48fcb5-2c00-48ac-992b-c5d70a203d1b",
+        "clearance|39760000|5110000|7fc30b93-fce4-4edc-8c11-edf5d16613fc|f5f2b777-2798-4f92-958e-ad313c2635b7",
+        "clearance|40685000|3670000|979adb84-c2cf-4329-bd25-d7822f7915a5|f9854a54-5723-46f2-8044-ae33385fcc16",
+        "clearance|40685000|5570000|f9854a54-5723-46f2-8044-ae33385fcc16|7fc30b93-fce4-4edc-8c11-edf5d16613fc",
+        "clearance|42975000|27905000|c1eb6b4b-fc68-4f2c-ae62-888e8ecf9c98|f1006acb-0c2e-461b-97e0-af4c8505001a",
+        "clearance|42975000|29175000|b5f73e5e-a84e-4495-bf36-88eebeb93ebe|f1006acb-0c2e-461b-97e0-af4c8505001a",
+        "clearance|43610000|27270000|eaa3075d-3979-4e00-97ce-ef951e535995|c1eb6b4b-fc68-4f2c-ae62-888e8ecf9c98",
+        "clearance|44245000|27905000|49ef8431-677a-41d2-b117-39621b124e02|f1006acb-0c2e-461b-97e0-af4c8505001a",
+        "clearance|44245000|29175000|d4737c8a-3fb9-41fc-a596-91f25091ad93|f1006acb-0c2e-461b-97e0-af4c8505001a",
+        "courtyards_overlap|-6270001|-16339999|50e5b563-1a67-49fa-8c96-36fe5fc83978|68489d27-e816-4906-adf8-7ab0bd10cfb8",
+        "hole_clearance|-2000000|3000000|e05987c7-6d6a-4375-9084-e248291c40f0|3ac7a6d2-dfcd-4447-af31-248f7e91ebfc",
+        "hole_clearance|-2000000|3600000|381300b3-4930-4e5b-a48f-f78ac599692e|3ac7a6d2-dfcd-4447-af31-248f7e91ebfc",
+        "hole_clearance|2000000|3000000|0172eb26-31ad-46c9-b2ee-9dd960049c76|a91162c3-c683-450b-801c-98bd97043e53",
+        "silk_over_copper|-11615000|31500000|d65d4f1b-1a8c-44a2-b09d-809c4dae210b|ba26bc35-932c-4e1b-a82f-e8940724ed6b",
+        "silk_over_copper|-16815000|31500000|d65d4f1b-1a8c-44a2-b09d-809c4dae210b|8bd68760-57fc-41fe-bacc-67b2f9cbadbd"
+      ],
       "meta": {
         "version": 2
       },
@@ -110,7 +141,7 @@
         "min_microvia_diameter": 0.19999999999999998,
         "min_microvia_drill": 0.09999999999999999,
         "min_silk_clearance": 0.0,
-        "min_through_hole_diameter": 0.3,
+        "min_through_hole_diameter": 0.19999999999999998,
         "min_track_width": 0.19999999999999998,
         "min_via_annular_width": 0.049999999999999996,
         "min_via_diameter": 0.39999999999999997,
@@ -382,7 +413,11 @@
           "/Channel_1/In",
           "/Channel_1/Out",
           "/Channel_2/In",
-          "/Channel_2/Out"
+          "/Channel_2/Out",
+          "/Channel_3/In",
+          "/Channel_3/Out",
+          "/Channel_4/In",
+          "/Channel_4/Out"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -393,7 +428,7 @@
       },
       {
         "bus_width": 12.0,
-        "clearance": 0.5,
+        "clearance": 1.0,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -403,7 +438,9 @@
         "name": "High voltage",
         "nets": [
           "/HV1",
-          "/HV2"
+          "/HV2",
+          "/HV3",
+          "/HV4"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -479,6 +516,14 @@
     [
       "9229c9ab-4f5d-45ef-b061-0ca09652ec41",
       "Channel_2"
+    ],
+    [
+      "06a02eb1-3fba-4a27-be60-3155872e9486",
+      "Channel_4"
+    ],
+    [
+      "44f2c598-d983-4cd8-9a44-9a878e600142",
+      "Channel_3"
     ]
   ],
   "text_variables": {}
