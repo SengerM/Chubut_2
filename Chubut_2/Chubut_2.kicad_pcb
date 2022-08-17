@@ -2504,6 +2504,15 @@
 
   (gr_rect (start -19.5 -19.5) (end 52.5 31.5) (layer "Edge.Cuts") (width 0.1) (fill none) (tstamp d65d4f1b-1a8c-44a2-b09d-809c4dae210b))
   (gr_rect (start -19.5 -19.5) (end 19.5 97.3) (layer "User.1") (width 0.15) (fill none) (tstamp 037e977a-ae6a-4313-95d6-e4cfa8ef8412))
+  (gr_text "Testing prototypes" (at 49.36 0.26 90) (layer "F.SilkS") (tstamp acf79d01-bc0c-4df7-afd3-dd072691711b)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
+  (gr_text "M. Senger" (at 16.7 -5.69 90) (layer "F.SilkS") (tstamp e7c3143f-6daf-46e7-99c5-410c3f8a10c6)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
+  (gr_text "Chubut 2 - 220817" (at -16.19 0.26 90) (layer "F.SilkS") (tstamp eb0f9b20-9003-4c3a-b080-c2a080510c1b)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
 
   (via (at 8 -14) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp 001c04e6-9404-4b5a-b0c6-19cd69daa572))
   (via (at 22.42 -15.35) (size 0.45) (drill 0.2) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp 0081b7a3-8392-4ca0-87e1-724e350b00c9))
