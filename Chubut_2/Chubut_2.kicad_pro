@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.508
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -76,10 +76,15 @@
         "clearance|40685000|3670000|979adb84-c2cf-4329-bd25-d7822f7915a5|f9854a54-5723-46f2-8044-ae33385fcc16",
         "clearance|40685000|5570000|f9854a54-5723-46f2-8044-ae33385fcc16|7fc30b93-fce4-4edc-8c11-edf5d16613fc",
         "clearance|42975000|27905000|c1eb6b4b-fc68-4f2c-ae62-888e8ecf9c98|f1006acb-0c2e-461b-97e0-af4c8505001a",
+        "clearance|42975000|27905000|f1006acb-0c2e-461b-97e0-af4c8505001a|c1eb6b4b-fc68-4f2c-ae62-888e8ecf9c98",
         "clearance|42975000|29175000|b5f73e5e-a84e-4495-bf36-88eebeb93ebe|f1006acb-0c2e-461b-97e0-af4c8505001a",
+        "clearance|42975000|29175000|f1006acb-0c2e-461b-97e0-af4c8505001a|b5f73e5e-a84e-4495-bf36-88eebeb93ebe",
+        "clearance|43610000|27270000|eaa3075d-3979-4e00-97ce-ef951e535995|49ef8431-677a-41d2-b117-39621b124e02",
         "clearance|43610000|27270000|eaa3075d-3979-4e00-97ce-ef951e535995|c1eb6b4b-fc68-4f2c-ae62-888e8ecf9c98",
         "clearance|44245000|27905000|49ef8431-677a-41d2-b117-39621b124e02|f1006acb-0c2e-461b-97e0-af4c8505001a",
+        "clearance|44245000|27905000|f1006acb-0c2e-461b-97e0-af4c8505001a|49ef8431-677a-41d2-b117-39621b124e02",
         "clearance|44245000|29175000|d4737c8a-3fb9-41fc-a596-91f25091ad93|f1006acb-0c2e-461b-97e0-af4c8505001a",
+        "clearance|44245000|29175000|f1006acb-0c2e-461b-97e0-af4c8505001a|d4737c8a-3fb9-41fc-a596-91f25091ad93",
         "courtyards_overlap|-6270001|-16339999|50e5b563-1a67-49fa-8c96-36fe5fc83978|68489d27-e816-4906-adf8-7ab0bd10cfb8",
         "hole_clearance|-2000000|3000000|e05987c7-6d6a-4375-9084-e248291c40f0|3ac7a6d2-dfcd-4447-af31-248f7e91ebfc",
         "hole_clearance|-2000000|3600000|381300b3-4930-4e5b-a48f-f78ac599692e|3ac7a6d2-dfcd-4447-af31-248f7e91ebfc",
