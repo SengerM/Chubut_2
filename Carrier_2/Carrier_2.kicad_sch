@@ -901,16 +901,16 @@
       (reference "J4") (unit 1) (value "Out 2") (footprint "chubut:hand_soldered_50Ohm_edge_connector")
     )
     (path "/c8e465fd-69df-4330-b537-91b43faf2c6f/b7d2808c-e93a-474c-9f0f-a06b530cd0e5"
-      (reference "L1") (unit 1) (value "L") (footprint "Inductor_SMD:L_0402_1005Metric")
+      (reference "L1") (unit 1) (value "1µ") (footprint "Inductor_SMD:L_0402_1005Metric")
     )
     (path "/c8e465fd-69df-4330-b537-91b43faf2c6f/a297e02a-b1f4-4728-a46c-a854565eab91"
-      (reference "L2") (unit 1) (value "L") (footprint "Inductor_SMD:L_0402_1005Metric")
+      (reference "L2") (unit 1) (value "18n") (footprint "Inductor_SMD:L_0402_1005Metric")
     )
     (path "/a8620048-ef7a-41b9-9705-6e147988d1f1/b7d2808c-e93a-474c-9f0f-a06b530cd0e5"
-      (reference "L3") (unit 1) (value "L") (footprint "Inductor_SMD:L_0402_1005Metric")
+      (reference "L3") (unit 1) (value "1µ") (footprint "Inductor_SMD:L_0402_1005Metric")
     )
     (path "/a8620048-ef7a-41b9-9705-6e147988d1f1/a297e02a-b1f4-4728-a46c-a854565eab91"
-      (reference "L4") (unit 1) (value "L") (footprint "Inductor_SMD:L_0402_1005Metric")
+      (reference "L4") (unit 1) (value "18n") (footprint "Inductor_SMD:L_0402_1005Metric")
     )
     (path "/7e17a046-bed2-4661-b9f9-668114b4d67e"
       (reference "R1") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0402_1005Metric")
