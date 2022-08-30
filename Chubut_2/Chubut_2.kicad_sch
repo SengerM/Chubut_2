@@ -3698,13 +3698,13 @@
       (reference "J31") (unit 1) (value "Conn_01x04") (footprint "chubut:850-10-004-10-001101")
     )
     (path "/3b19e636-d646-46af-820d-4fff1b9b03e9/b7d2808c-e93a-474c-9f0f-a06b530cd0e5"
-      (reference "L1") (unit 1) (value "2.2µ") (footprint "Inductor_SMD:L_0402_1005Metric")
+      (reference "L1") (unit 1) (value "1µ") (footprint "Inductor_SMD:L_0402_1005Metric")
     )
     (path "/3b19e636-d646-46af-820d-4fff1b9b03e9/a297e02a-b1f4-4728-a46c-a854565eab91"
       (reference "L2") (unit 1) (value "18n") (footprint "Inductor_SMD:L_0402_1005Metric")
     )
     (path "/8a60271e-4c04-4ad3-b46e-1141ce11e005/b7d2808c-e93a-474c-9f0f-a06b530cd0e5"
-      (reference "L3") (unit 1) (value "2.2µ") (footprint "Inductor_SMD:L_0402_1005Metric")
+      (reference "L3") (unit 1) (value "1µ") (footprint "Inductor_SMD:L_0402_1005Metric")
     )
     (path "/8a60271e-4c04-4ad3-b46e-1141ce11e005/a297e02a-b1f4-4728-a46c-a854565eab91"
       (reference "L4") (unit 1) (value "18n") (footprint "Inductor_SMD:L_0402_1005Metric")
