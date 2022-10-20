@@ -268,6 +268,23 @@
     )
   )
 
+  (symbol (lib_id "Mechanical:MountingHole") (at 164.084 118.872 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 2c2a85a3-7cf2-4443-9b8b-7e9cd2b03f69)
+    (property "Reference" "H4" (id 0) (at 167.64 117.6019 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (id 1) (at 167.64 120.1419 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.1mm" (id 2) (at 164.084 118.872 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (id 3) (at 164.084 118.872 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
   (symbol (lib_id "Connector:Conn_01x01_Female") (at 115.316 114.808 270) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 76503ac6-17a0-42e3-968d-1d4bc53c1d29)
@@ -394,6 +411,23 @@
     (pin "1" (uuid 75d51b02-f874-48a4-9d07-cab03d5ddf4a))
   )
 
+  (symbol (lib_id "Mechanical:MountingHole") (at 164.084 112.014 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid fb646a8f-24ef-4fd2-b574-910a478e8381)
+    (property "Reference" "H3" (id 0) (at 167.64 110.7439 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (id 1) (at 167.64 113.2839 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.1mm" (id 2) (at 164.084 112.014 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (id 3) (at 164.084 112.014 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
   (sheet_instances
     (path "/" (page "1"))
   )
@@ -410,6 +444,12 @@
     )
     (path "/87df3fe7-ae00-46da-8148-53eb9a2a1c14"
       (reference "H2") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.1mm")
+    )
+    (path "/fb646a8f-24ef-4fd2-b574-910a478e8381"
+      (reference "H3") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.1mm")
+    )
+    (path "/2c2a85a3-7cf2-4443-9b8b-7e9cd2b03f69"
+      (reference "H4") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.1mm")
     )
     (path "/aa99d4a0-1ff7-40a7-a14b-5a17f52e7575"
       (reference "J1") (unit 1) (value "CH1") (footprint "chubut:MILL-MAX_0965-0-15-20-80-14-11-0_contact")
