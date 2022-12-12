@@ -102,7 +102,6 @@
         "clearance|14250000|4730000|9fcf1c7d-3c0a-46e7-9a9d-1dcfd4cc9c1d|e38df032-baca-45ff-a7cb-c516c2721bab",
         "clearance|14845000|27905000|4bcc3db1-7b1f-4b8f-8234-575fbf974a33|50f55bd5-3df7-4246-ae75-6c12ca7e2211",
         "clearance|14845000|29175000|4bcc3db1-7b1f-4b8f-8234-575fbf974a33|451bb45d-19d2-4a36-b9ad-2c7671a4394f",
-        "clearance|15480000|27270000|52072af2-4def-4af2-b0eb-c20474fd5e2d|50f55bd5-3df7-4246-ae75-6c12ca7e2211",
         "clearance|15480000|27270000|52072af2-4def-4af2-b0eb-c20474fd5e2d|f3be34df-0c74-4f27-941a-e9e7884035a7",
         "clearance|15695000|3330000|92600c40-52d3-4d7e-8f44-bf0a2be1abc4|e38df032-baca-45ff-a7cb-c516c2721bab",
         "clearance|15695000|4730000|d83de697-b47a-4243-bca1-d2276ecc1898|d6e7fb7b-2400-4bcc-afa0-fb1fed2526c6",
@@ -214,7 +213,6 @@
         "hole_clearance|-2000000|3600000|381300b3-4930-4e5b-a48f-f78ac599692e|04183f0f-7ebb-4b0b-969f-66b89cedb8ac",
         "hole_clearance|-2000000|3600000|381300b3-4930-4e5b-a48f-f78ac599692e|088952da-5fad-4c96-a55d-cbac5e1d8b1a",
         "hole_clearance|-2000000|3600000|381300b3-4930-4e5b-a48f-f78ac599692e|3ac7a6d2-dfcd-4447-af31-248f7e91ebfc",
-        "hole_clearance|2000000|3000000|0172eb26-31ad-46c9-b2ee-9dd960049c76|79a5f2ac-d619-4d71-abc1-0d119013f20d",
         "hole_clearance|2000000|3000000|0172eb26-31ad-46c9-b2ee-9dd960049c76|a91162c3-c683-450b-801c-98bd97043e53",
         "hole_clearance|2000000|3000000|0172eb26-31ad-46c9-b2ee-9dd960049c76|d94c922f-9809-41d3-b9b1-e1cff052b8e8",
         "hole_clearance|34935000|4665000|987ec1d5-df74-4d77-8f8b-c69632a1c6e8|8461f074-abf2-436a-a079-18c53e7db140",
@@ -583,22 +581,7 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "50Ω",
-        "nets": [
-          "/4_Out_1",
-          "/4_Out_2",
-          "/Channel_1/In",
-          "/Channel_1/Out",
-          "/Channel_2/In",
-          "/Channel_2/Out",
-          "/Channel_3/In",
-          "/Channel_3/Out",
-          "/Channel_4/In",
-          "/Channel_4/Out",
-          "/Channel_5/In",
-          "/Channel_5/Out",
-          "/Channel_6/In",
-          "/Channel_6/Out"
-        ],
+        "nets": [],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.378815,
@@ -616,16 +599,7 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "High voltage",
-        "nets": [
-          "/HV1",
-          "/HV2",
-          "/HV3",
-          "/HV4",
-          "/HV5",
-          "/HV6",
-          "/HV7",
-          "/HV8"
-        ],
+        "nets": [],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
@@ -694,40 +668,100 @@
       ""
     ],
     [
-      "6bff298f-e9c8-4a51-9dad-e7c53a422dca",
-      "Channel_1"
+      "564ececd-9a9e-459e-b1e4-0287b16b4260",
+      "Stage_2"
     ],
     [
-      "9229c9ab-4f5d-45ef-b061-0ca09652ec41",
-      "Channel_2"
+      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
+      "Stage_1"
     ],
     [
-      "06a02eb1-3fba-4a27-be60-3155872e9486",
-      "Channel_4"
+      "564ececd-9a9e-459e-b1e4-0287b16b4260",
+      "Stage_2"
     ],
     [
-      "44f2c598-d983-4cd8-9a44-9a878e600142",
-      "Channel_3"
+      "564ececd-9a9e-459e-b1e4-0287b16b4260",
+      "Stage_2"
     ],
     [
-      "3b19e636-d646-46af-820d-4fff1b9b03e9",
-      "Channel_5"
+      "d1a9e817-767a-4455-ba62-27ce0a1d7581",
+      "Temperature_and_humidity_sensor1"
     ],
     [
-      "8a60271e-4c04-4ad3-b46e-1141ce11e005",
-      "Channel_6"
+      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
+      "Stage_1"
     ],
     [
       "6e8e55cd-6ac3-496a-a84c-8ff434355d6e",
       "Temperature_and_humidity_sensor"
     ],
     [
-      "40be651f-3b40-409e-80b2-bfaef24c57e1",
-      "Temperature_and_humidity_sensor1"
+      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
+      "Stage_1"
     ],
     [
-      "5f2df7dd-e212-4ab6-8c37-c811c81fa75e",
-      "Temperature_and_humidity_sensor2"
+      "e908fb17-fc31-402d-ada9-763d015d83bc",
+      "CH1"
+    ],
+    [
+      "564ececd-9a9e-459e-b1e4-0287b16b4260",
+      "Stage_2"
+    ],
+    [
+      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
+      "Stage_1"
+    ],
+    [
+      "32725de3-24e1-4802-b3cc-1c6f78fce156",
+      "CH2"
+    ],
+    [
+      "564ececd-9a9e-459e-b1e4-0287b16b4260",
+      "Stage_2"
+    ],
+    [
+      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
+      "Stage_1"
+    ],
+    [
+      "200377c6-86e2-4a61-aeac-b7b360660588",
+      "CH1_double_stage"
+    ],
+    [
+      "a4a2f77c-466e-46a5-a65e-a4bdaf1d744a",
+      "CH2_double_stage"
+    ],
+    [
+      "20797b75-f33f-46ca-a992-b51c5b3591c2",
+      "DC_power_2"
+    ],
+    [
+      "53acaf99-fa20-4ae2-9f7b-9de1a18fabb9",
+      "DC_power_1"
+    ],
+    [
+      "7f4185be-c8eb-42cc-a4f0-503c691deeb1",
+      "high_voltage_and_GND"
+    ],
+    [
+      "049fe7e1-d567-4c26-be53-096f93ce0b24",
+      "high_voltage_and_GND1"
+    ],
+    [
+      "2a897dd3-4d3e-4cfb-923e-86234658435b",
+      "CH3"
+    ],
+    [
+      "564ececd-9a9e-459e-b1e4-0287b16b4260",
+      "Stage_2"
+    ],
+    [
+      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
+      "Stage_1"
+    ],
+    [
+      "6bbb347d-e4dc-4e39-944d-95359fb740de",
+      "CH4"
     ]
   ],
   "text_variables": {}
