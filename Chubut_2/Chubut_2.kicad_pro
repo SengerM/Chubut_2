@@ -35,7 +35,7 @@
         "pads": {
           "drill": 0.0,
           "height": 3.0,
-          "width": 3.0
+          "width": 1.0
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -581,7 +581,16 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "50Ω",
-        "nets": [],
+        "nets": [
+          "/CH1/Stage_1/Out",
+          "/CH1/Stage_2/Out",
+          "/CH2/Stage_1/Out",
+          "/CH2/Stage_2/Out",
+          "/CH3/Stage_1/Out",
+          "/CH3/Stage_2/Out",
+          "/CH4/Stage_1/Out",
+          "/CH4/Stage_2/Out"
+        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.378815,
@@ -599,7 +608,10 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "High voltage",
-        "nets": [],
+        "nets": [
+          "/high_voltage_and_GND/HV1",
+          "/high_voltage_and_GND/HV2"
+        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
@@ -676,28 +688,8 @@
       "Stage_1"
     ],
     [
-      "564ececd-9a9e-459e-b1e4-0287b16b4260",
-      "Stage_2"
-    ],
-    [
-      "564ececd-9a9e-459e-b1e4-0287b16b4260",
-      "Stage_2"
-    ],
-    [
-      "d1a9e817-767a-4455-ba62-27ce0a1d7581",
-      "Temperature_and_humidity_sensor1"
-    ],
-    [
-      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
-      "Stage_1"
-    ],
-    [
       "6e8e55cd-6ac3-496a-a84c-8ff434355d6e",
       "Temperature_and_humidity_sensor"
-    ],
-    [
-      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
-      "Stage_1"
     ],
     [
       "e908fb17-fc31-402d-ada9-763d015d83bc",
@@ -724,28 +716,12 @@
       "Stage_1"
     ],
     [
-      "200377c6-86e2-4a61-aeac-b7b360660588",
-      "CH1_double_stage"
-    ],
-    [
-      "a4a2f77c-466e-46a5-a65e-a4bdaf1d744a",
-      "CH2_double_stage"
-    ],
-    [
-      "20797b75-f33f-46ca-a992-b51c5b3591c2",
-      "DC_power_2"
-    ],
-    [
       "53acaf99-fa20-4ae2-9f7b-9de1a18fabb9",
       "DC_power_1"
     ],
     [
       "7f4185be-c8eb-42cc-a4f0-503c691deeb1",
       "high_voltage_and_GND"
-    ],
-    [
-      "049fe7e1-d567-4c26-be53-096f93ce0b24",
-      "high_voltage_and_GND1"
     ],
     [
       "2a897dd3-4d3e-4cfb-923e-86234658435b",
