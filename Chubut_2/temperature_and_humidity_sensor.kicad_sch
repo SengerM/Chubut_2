@@ -357,7 +357,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x04") (at 155.448 107.696 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 78eb3fb2-641c-4080-a26f-1fec283b240c)
-    (property "Reference" "J3" (id 0) (at 157.48 107.8992 0)
+    (property "Reference" "J6" (id 0) (at 157.48 107.8992 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "T+H_sensor" (id 1) (at 157.48 110.2106 0)
