@@ -492,18 +492,6 @@
     )
   )
 
-  (sheet (at 445.77 -36.322) (size 12.7 7.62) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
-    (fill (color 0 0 0 0.0000))
-    (uuid 6e8e55cd-6ac3-496a-a84c-8ff434355d6e)
-    (property "Sheet name" "Temperature_and_humidity_sensor" (id 0) (at 445.77 -37.0336 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheet file" "temperature_and_humidity_sensor.kicad_sch" (id 1) (at 445.77 -28.1174 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-  )
-
   (sheet (at 445.77 -52.07) (size 12.7 7.874) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
@@ -536,7 +524,6 @@
     (path "/" (page "1"))
     (path "/e908fb17-fc31-402d-ada9-763d015d83bc/564ececd-9a9e-459e-b1e4-0287b16b4260" (page "2"))
     (path "/e908fb17-fc31-402d-ada9-763d015d83bc/3d7f84eb-809d-4e4c-b1fd-32406e7f2382" (page "3"))
-    (path "/6e8e55cd-6ac3-496a-a84c-8ff434355d6e" (page "8"))
     (path "/e908fb17-fc31-402d-ada9-763d015d83bc" (page "10"))
     (path "/32725de3-24e1-4802-b3cc-1c6f78fce156/564ececd-9a9e-459e-b1e4-0287b16b4260" (page "11"))
     (path "/32725de3-24e1-4802-b3cc-1c6f78fce156/3d7f84eb-809d-4e4c-b1fd-32406e7f2382" (page "12"))
@@ -728,9 +715,6 @@
     (path "/e908fb17-fc31-402d-ada9-763d015d83bc/3d7f84eb-809d-4e4c-b1fd-32406e7f2382/738827ce-5e26-4ce9-9265-91b36a2d7aff"
       (reference "C4") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
-    (path "/6e8e55cd-6ac3-496a-a84c-8ff434355d6e/14c481a7-a2b3-42a9-92d6-736d2126d352"
-      (reference "C5") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0402_1005Metric")
-    )
     (path "/32725de3-24e1-4802-b3cc-1c6f78fce156/564ececd-9a9e-459e-b1e4-0287b16b4260/bef440b9-78fb-46f1-bc44-4c9fc51f7ae9"
       (reference "C6") (unit 1) (value "1n") (footprint "Capacitor_SMD:C_0402_1005Metric")
     )
@@ -872,9 +856,6 @@
     (path "/e908fb17-fc31-402d-ada9-763d015d83bc/3d7f84eb-809d-4e4c-b1fd-32406e7f2382/131a5c6a-55e7-4140-880b-8d08fe3a398b"
       (reference "J5") (unit 1) (value "MS130-10S") (footprint "chubut:MS130-10S")
     )
-    (path "/6e8e55cd-6ac3-496a-a84c-8ff434355d6e/78eb3fb2-641c-4080-a26f-1fec283b240c"
-      (reference "J6") (unit 1) (value "T+H_sensor") (footprint "Connector_JST:JST_XH_S4B-XH-A_1x04_P2.50mm_Horizontal")
-    )
     (path "/e908fb17-fc31-402d-ada9-763d015d83bc/008b24b2-7f6f-45ed-8470-88e9002aef53"
       (reference "J7") (unit 1) (value "In") (footprint "chubut:MILL-MAX_0965-0-15-20-80-14-11-0")
     )
@@ -955,9 +936,6 @@
     )
     (path "/e908fb17-fc31-402d-ada9-763d015d83bc/3d7f84eb-809d-4e4c-b1fd-32406e7f2382/811f3b32-4541-40db-b7f9-99ff2006b576"
       (reference "U4") (unit 1) (value "TCBT-14+") (footprint "chubut:GU1414")
-    )
-    (path "/6e8e55cd-6ac3-496a-a84c-8ff434355d6e/25250a85-92ea-440c-bee6-1941e08a4524"
-      (reference "U5") (unit 1) (value "SHT31-DIS") (footprint "Sensor_Humidity:Sensirion_DFN-8-1EP_2.5x2.5mm_P0.5mm_EP1.1x1.7mm")
     )
     (path "/32725de3-24e1-4802-b3cc-1c6f78fce156/564ececd-9a9e-459e-b1e4-0287b16b4260/2ef0403e-e202-408e-a6b0-8f4fdb36f2ba"
       (reference "U6") (unit 1) (value "PSA4-5043+") (footprint "chubut:MMM1362")
