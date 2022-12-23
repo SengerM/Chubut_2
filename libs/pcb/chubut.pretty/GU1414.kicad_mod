@@ -1,6 +1,6 @@
 (footprint "GU1414" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 0)
+  (tedit 63A59B91)
   (attr smd)
   (fp_text reference "REF**" (at 0 -0.5 unlocked) (layer "F.SilkS")
     (effects (font (size 1 1) (thickness 0.15)))
@@ -26,7 +26,7 @@
   (pad "5" smd rect (at 1.27 -0.215) (size 0.69 2.11) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp a2771ce9-85d9-42eb-a1d2-394383e3dca3))
   (pad "5" thru_hole circle (at 1.27 0.31) (size 0.4 0.4) (drill 0.33) (layers *.Cu) (tstamp b806f3fc-93ad-4a54-ad6a-25d8ff1f3833))
   (pad "5" thru_hole circle (at 1.27 -0.65) (size 0.4 0.4) (drill 0.33) (layers *.Cu) (tstamp fc054f41-1915-4d89-b7e5-0b7d327fb384))
-  (model "/home/alf/cernbox/projects/LGAD_stability/Chubut_2/libs/3D/GU1414.step"
+  (model "${KIPRJMOD}/../libs/3D/GU1414.step"
     (offset (xyz 1.3 1.5 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

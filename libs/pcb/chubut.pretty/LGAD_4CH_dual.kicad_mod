@@ -1,6 +1,6 @@
 (footprint "LGAD_4CH_dual" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 0)
+  (tedit 63A59BBA)
   (attr smd)
   (fp_text reference "REF**" (at -0.03 -4.52 unlocked) (layer "F.SilkS")
     (effects (font (size 1 1) (thickness 0.15)))
@@ -27,7 +27,7 @@
   (pad "9" smd roundrect (at -2.7 4.4) (size 1 1) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25) (tstamp 72f7d5c0-c0cc-4a10-b4d2-cc72d6c2536a))
   (pad "10" smd roundrect (at 3.1 4.4) (size 1 1) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25) (tstamp 75c7e846-f362-4b94-b487-967c74f17cdb))
   (pad "11" smd roundrect (at 3.1 3.2) (size 1 1) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.25) (tstamp 3cae7338-5bd5-4b90-8a2d-edc71bdc6543))
-  (model "/home/alf/cernbox/projects/LGAD_stability/Chubut_2/libs/3D/LGAD_market_survey_FBK.step"
+  (model "${KIPRJMOD}/../libs/3D/LGAD_market_survey_FBK.step"
     (offset (xyz 0.2 -2 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

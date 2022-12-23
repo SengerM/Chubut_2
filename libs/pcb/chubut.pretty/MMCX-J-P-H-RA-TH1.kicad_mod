@@ -1,6 +1,6 @@
 (footprint "MMCX-J-P-H-RA-TH1" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 6154C5B6)
+  (tedit 63A59BEA)
   (descr "http://www.molex.com/pdm_docs/sd/734151471_sd.pdf")
   (tags "MMCX Coaxial Connector 50 ohms Female Jack Vertical THT Right Angle")
   (attr through_hole)
@@ -36,7 +36,7 @@
   (pad "2" thru_hole circle (at 1.27 1.27) (size 1.24 1.24) (drill 0.84) (layers *.Cu *.Mask) (tstamp 73e581c8-4188-498c-b8a8-dd8d72c78255))
   (pad "2" thru_hole circle (at 1.27 -1.27) (size 1.24 1.24) (drill 0.84) (layers *.Cu *.Mask) (tstamp 8fa7d7a2-2719-4d4c-b138-b31859b90e20))
   (pad "2" thru_hole circle (at -1.27 -1.27) (size 1.24 1.24) (drill 0.84) (layers *.Cu *.Mask) (tstamp a801b2cb-ade2-4b3a-bbcf-af24e1723440))
-  (model "/home/alf/cernbox/projects/LGAD_stability/Chubut_2/libs/3D/MMCX-J-P-H-RA-TH1.stp"
+  (model "${KIPRJMOD}/../libs/3D/MMCX-J-P-H-RA-TH1.stp"
     (offset (xyz 0 0 2.1))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 90 180))
