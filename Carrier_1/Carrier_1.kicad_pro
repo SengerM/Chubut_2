@@ -423,7 +423,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "../libs/3D/Carrier_1.step",
+      "step": "Carrier_1.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
