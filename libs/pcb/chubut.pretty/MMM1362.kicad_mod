@@ -1,6 +1,6 @@
 (footprint "MMM1362" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 63AC46E9)
+  (tedit 63C9AE01)
   (attr smd)
   (fp_text reference "REF**" (at 0.7 -3.49 unlocked) (layer "F.SilkS") hide
     (effects (font (size 1 1) (thickness 0.15)))
@@ -51,4 +51,9 @@
   (pad "2" smd rect (at 1.15 0) (size 0.8 0.95) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp ffdea285-6b7b-4b9f-975c-b07a4201bc14))
   (pad "3" smd rect (at 1.3 -2.2) (size 0.5 0.95) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 3fc6bc65-8aff-47b9-8b47-a175c4bf0330))
   (pad "4" smd rect (at 0 -2.2) (size 0.5 0.95) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp acbc2bef-f2b2-4b23-beff-94fdaa3539bd))
+  (model "$(KIPRJMOD)/../libs/3D/MMM1362.step"
+    (offset (xyz 0.65 1 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )
