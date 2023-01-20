@@ -541,56 +541,52 @@
       ""
     ],
     [
-      "564ececd-9a9e-459e-b1e4-0287b16b4260",
-      "Stage_2"
-    ],
-    [
-      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
-      "Stage_1"
-    ],
-    [
-      "e908fb17-fc31-402d-ada9-763d015d83bc",
-      "CH1"
-    ],
-    [
-      "564ececd-9a9e-459e-b1e4-0287b16b4260",
-      "Stage_2"
-    ],
-    [
-      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
-      "Stage_1"
-    ],
-    [
-      "32725de3-24e1-4802-b3cc-1c6f78fce156",
+      "70ccfbcb-03eb-47cd-9141-9bbb548e6bc3",
       "CH2"
     ],
     [
-      "564ececd-9a9e-459e-b1e4-0287b16b4260",
-      "Stage_2"
+      "1b11764d-61a9-425d-9420-b357811935a5",
+      "CH1"
     ],
     [
-      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
+      "0a82563b-6854-42ee-84af-6853e631af1f",
       "Stage_1"
     ],
     [
-      "7f4185be-c8eb-42cc-a4f0-503c691deeb1",
-      "high_voltage_and_GND"
+      "4168e5cc-e1cd-48db-a8c0-0f082fcd3be5",
+      "Stage_2"
     ],
     [
-      "2a897dd3-4d3e-4cfb-923e-86234658435b",
+      "c47fd83b-6430-4d21-ab81-13418eff4ed3",
       "CH3"
     ],
     [
-      "564ececd-9a9e-459e-b1e4-0287b16b4260",
-      "Stage_2"
-    ],
-    [
-      "3d7f84eb-809d-4e4c-b1fd-32406e7f2382",
+      "0a82563b-6854-42ee-84af-6853e631af1f",
       "Stage_1"
     ],
     [
-      "6bbb347d-e4dc-4e39-944d-95359fb740de",
+      "4168e5cc-e1cd-48db-a8c0-0f082fcd3be5",
+      "Stage_2"
+    ],
+    [
+      "3c30df81-3172-408c-846a-ff1991465cd8",
       "CH4"
+    ],
+    [
+      "0a82563b-6854-42ee-84af-6853e631af1f",
+      "Stage_1"
+    ],
+    [
+      "4168e5cc-e1cd-48db-a8c0-0f082fcd3be5",
+      "Stage_2"
+    ],
+    [
+      "0a82563b-6854-42ee-84af-6853e631af1f",
+      "Stage_1"
+    ],
+    [
+      "4168e5cc-e1cd-48db-a8c0-0f082fcd3be5",
+      "Stage_2"
     ]
   ],
   "text_variables": {}
