@@ -33,9 +33,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 1.4,
-          "height": 2.1,
-          "width": 2.1
+          "drill": 0.0,
+          "height": 3.0,
+          "width": 2.5
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -440,16 +440,12 @@
         "name": "50Ω",
         "nets": [
           "/CH1/Stage_1/In",
-          "/CH1/Stage_1/Out",
           "/CH1/Stage_2/Out",
           "/CH2/Stage_1/In",
-          "/CH2/Stage_1/Out",
           "/CH2/Stage_2/Out",
           "/CH3/Stage_1/In",
-          "/CH3/Stage_1/Out",
           "/CH3/Stage_2/Out",
           "/CH4/Stage_1/In",
-          "/CH4/Stage_1/Out",
           "/CH4/Stage_2/Out"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -470,12 +466,32 @@
         "microvia_drill": 0.1,
         "name": "High voltage",
         "nets": [
-          "/high_voltage_and_GND/HV1",
-          "/high_voltage_and_GND/HV2"
+          "/HV1",
+          "/HV2"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Power",
+        "nets": [
+          "/POWER"
+        ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6.0
