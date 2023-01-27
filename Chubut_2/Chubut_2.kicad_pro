@@ -384,18 +384,42 @@
         "microvia_drill": 0.1,
         "name": "50Ω",
         "nets": [
-          "/CH1/Stage_1/In",
-          "/CH1/Stage_2/Out",
-          "/CH2/Stage_1/In",
-          "/CH2/Stage_2/Out",
-          "/CH3/Stage_1/In",
-          "/CH3/Stage_2/Out",
-          "/CH4/Stage_1/In",
-          "/CH4/Stage_2/Out"
+          "/CH1/In",
+          "/CH1/Out",
+          "/CH1/Stage_1/50Ohm_1",
+          "/CH1/Stage_1/50Ohm_2",
+          "/CH1/Stage_1/Out",
+          "/CH1/Stage_2/50Ohm_1",
+          "/CH1/Stage_2/50Ohm_2",
+          "/CH1/Stage_2/In",
+          "/CH2/In",
+          "/CH2/Out",
+          "/CH2/Stage_1/50Ohm_1",
+          "/CH2/Stage_1/50Ohm_2",
+          "/CH2/Stage_1/Out",
+          "/CH2/Stage_2/50Ohm_1",
+          "/CH2/Stage_2/50Ohm_2",
+          "/CH2/Stage_2/In",
+          "/CH3/In",
+          "/CH3/Out",
+          "/CH3/Stage_1/50Ohm_1",
+          "/CH3/Stage_1/50Ohm_2",
+          "/CH3/Stage_1/Out",
+          "/CH3/Stage_2/50Ohm_1",
+          "/CH3/Stage_2/50Ohm_2",
+          "/CH3/Stage_2/In",
+          "/CH4/In",
+          "/CH4/Out",
+          "/CH4/Stage_1/50Ohm_1",
+          "/CH4/Stage_1/50Ohm_2",
+          "/CH4/Stage_1/Out",
+          "/CH4/Stage_2/50Ohm_1",
+          "/CH4/Stage_2/50Ohm_2",
+          "/CH4/Stage_2/In"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.715,
+        "track_width": 0.7,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6.0
@@ -502,7 +526,7 @@
       ""
     ],
     [
-      "70ccfbcb-03eb-47cd-9141-9bbb548e6bc3",
+      "cb47f31a-6344-451b-8a59-6ab30dfd0440",
       "CH2"
     ],
     [
@@ -518,7 +542,7 @@
       "Stage_2"
     ],
     [
-      "c47fd83b-6430-4d21-ab81-13418eff4ed3",
+      "20dae517-89cf-471f-8fa0-c278cf011125",
       "CH3"
     ],
     [
@@ -530,7 +554,7 @@
       "Stage_2"
     ],
     [
-      "3c30df81-3172-408c-846a-ff1991465cd8",
+      "7994428e-56de-41ff-9161-5d78d580931a",
       "CH4"
     ],
     [
