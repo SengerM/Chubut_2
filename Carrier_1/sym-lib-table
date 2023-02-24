@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name "LGAD")(type "KiCad")(uri "${KIPRJMOD}/../libs/schematic/LGAD.kicad_sym")(options "")(descr ""))
-)

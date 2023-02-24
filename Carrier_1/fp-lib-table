@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name "chubut")(type "KiCad")(uri "${KIPRJMOD}/../libs/pcb/chubut.pretty")(options "")(descr ""))
-)
