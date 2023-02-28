@@ -296,6 +296,11 @@
     (uuid b95080ba-835d-4df5-a560-1e0eda0cbdd7)
   )
 
+  (label "HV" (at 113.03 132.08 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 208e2ea4-cb9b-430e-8334-fcd52be41d61)
+  )
+
   (symbol (lib_id "Mechanical:MountingHole") (at 130.81 106.68 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 062f7551-7233-45c7-81e7-06c638ae4e6a)
