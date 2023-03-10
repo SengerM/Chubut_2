@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Chubut 2: Readout board for LGADs</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This fixes the problem of small font (some texts and also the math) in mobile devices, see https://stackoverflow.com/a/35564095/8849755 -->
+	<link rel="stylesheet" href="https://sengerm.github.io/html-academic-publishing/css_and_scripts/style.css">
+	<link rel="stylesheet" href="https://sengerm.github.io/html-academic-publishing/css_and_scripts/images_gallery/images_gallery_with_zoom_211019.css">
+	<!-- Math support https://www.mathjax.org/#gettingstarted -->
+    <script>
+	MathJax = {
+	  tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']]
+	  },
+	  svg: {
+		fontCache: 'global'
+	  }
+	};
+	</script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+	
+</head>
+
+<body>
+
+<div id="document_title"></div>
+
+<author affiliation="Universität Zürich">Matias Senger</author>
+
+<div style="margin: 22px; text-align: center;">March 2023</div>
+
+<siglas class="definition" first="Low Gain Avalanche Detector (LGAD)" short="LGAD"></siglas>
+<siglas class="definition" first="Trench Isolated LGAD" short="TI-LGAD"></siglas>
+<siglas class="definition" first="Device Under Test (DUT)" short="DUT"></siglas>
+<siglas class="definition" first="Electromagnetic Interference (EMI)" short="EMI"></siglas>
+<siglas class="definition" first="Most Probable Value (MPV)" short="MPV"></siglas>
+<siglas class="definition" first="Minimum Ionizing Particle (MIP)" short="MIP"></siglas>
+
+<abstract>
+	<p>The <em>Chubut&nbsp;2</em> is a discrete readout board for testing <siglas>LGAD</siglas> samples. It was designed having in mind not only good electrical characteristics but also with a focus on simplifying the workflow in the lab. In this document details and a characterization of this board are presented. The design is open source and the source files can be found in reference&nbsp;<crossref toid="Reference: Chubut 2 source repo"></crossref>.</p>
+</abstract>
+
+<div id="table-of-contents">
+	<h2 class="unnumbered">Contents</h2>
+</div>
+
+<h1>Introduction</h1>
+
+<p>Since I started my PhD I have been testing several <siglas>LGAD</siglas> devices, and variations such as <siglas>TI-LGAD</siglas> and others. All these devices are samples intended for research purposes, i.e. with relatively small number of pixels and literally hundreds of different flavors with different characteristics. To test these samples I was using the so called <em>Santa Cruz board</em>&nbsp;<crossref toid="Reference: Santa Cruz board"></crossref> or a variation of it called the <em>Chubut board</em>&nbsp;<crossref toid="Reference: Chubut board"></crossref>. These are single channel readout boards with a built in single stage amplifier in which the sample is stick onto a high voltage pad, and then wire bonded to the board itself.</p>
+<p>Though these boards can get the job done, they present some inconveniences when the number of samples to be tested grows, as each time a new sample has to be tested, the old sample has to be removed thus destroying the wire bondings. As the number of times a sample can be wire bonded is finite, this makes it not only tedious but in some cases impossible to repeat a test on a sample that has previously been tested. Additionally, after some number of tested sensors the board as well wears and it cannot be further wire bonded<footnote>I have experienced this with several boards, that when new the wires stick perfectly to the bonding pads but after some number of usages it becomes impossible to wire bond them again. In some cases this <em>number of usages</em> was relatively large (say about ten) but in some other cases it was as low as only one usage. I believe this is related to some effect related to moisture with the cooling and warming cycles required for each test. But I still don't know it for sure.</footnote>, having to be replaced with a new one. In doing this we are discarding a whole board which completely operational except that the wires do not stick, which is not just pity but it also complicates the logistics because I found myself sometimes without useful boards and still with sensors to be tested. Furthermore the amplification provided by these boards is usually not enough to go straight into a digitizer (or an oscilloscope) and a 20&nbsp;dB second stage amplifier has to be used.</p>
+<p>To overcome these issues I decided to develop a new board from scratch, which is the <em>Chubut&nbsp;2</em> board. It incorporates a design with a carrier board&nbsp;+&nbsp;a main board. The main board hosts all the circuitry and connectors while the carrier board is a super-cheap board which only hosts the <siglas>DUT</siglas>. In this way the main board can be reused up to infinite times<footnote>Well, it probably has a limit but for sure it is more than 1e3 times according to the specifications of the components.</footnote> with different carriers. The fact that the carrier only hosts the <siglas>DUT</siglas> makes it very cheap (when compared with the main board, or with one of the other readout boards) and thus it is feasible to produce one carrier for each <siglas>DUT</siglas>, and even with different designs to adapt the wire bondings to the <siglas>DUT</siglas>'s layout. The current design possesses 4 independent (and identical) channels, and each channel has two amplification stages leading to a total of ~40&nbsp;dB voltage gain (on 50&nbsp;Ω input and output).</p>
+
+<p>In this document I present the reader with some information about this board.</p>
+
+<h1>Board design and details</h1>
+
+<p>In <crossref toid="Figure: pictures of the Chubut 2 board"></crossref> pictures of the Chubut&nbsp;2 board are shown. Here it can be seen the main board with the electronic components and connectors as well as an example of a carrier board with a <siglas>DUT</siglas> mounted. The blue 3D printed piece is there to hold in position the carrier board. This piece can be easily re manufactured (or even omitted) depending on how the board is going to be mounted on the rest of the setup. As can be seen the main board hosts all the electronic components and comprises the "expensive half" of the setup, while the carrier board (the smaller one) requires no assembly at all other than mounting the <siglas>DUT</siglas>, thus making it very cheap in comparison.</p>
+
+<float class="Figure" id="Figure: pictures of the Chubut 2 board">
+	<div class="images_gallery_with_zoom_211019">
+		<image src="media/chubut_2_photos/1.jpg"></image>
+		<image src="media/chubut_2_photos/2.jpg"></image>
+		<image src="media/chubut_2_photos/3.jpg"></image>
+		<image src="media/chubut_2_photos/4.jpg"></image>
+		<image src="media/chubut_2_photos/5.jpg"></image>
+		<image src="media/chubut_2_photos/6.jpg"></image>
+	</div>
+	<floatcaption>Pictures of the Chubut&nbsp;2 board.</floatcaption>
+</float>
+
+<p>All the connectors are of type MMCX, a kind of miniature RF connectors, even those for the high voltage and the power supply. These connectors were chosen in order to reduce the layout of the board and leaving the door open to further versions of this board with a larger number of channels with a similar layout size. For the high voltage and power input the choice for coaxial connectors was done in order to make it easier to avoid <siglas>EMI</siglas> in setups where the length of the cables is large, which can easily happen in my experience.</p>
+
+<p>The amplifiers are implemented with the PSA4-5043+ by Mini-Circuits. This is a low noise integrated amplifier with a bandwidth spanning from 50&nbsp;MHz to 4&nbsp;GHz and with an input and output impedance of 50&nbsp;Ω&nbsp;<crossref toid="Reference: Mini-Circuits amp datasheet"></crossref>. It can be powered with any voltage between 3&nbsp;V and 5&nbsp;V with a relatively constant performance. Each channel has two of such amplifiers in series leading to a total voltage gain of ~40&nbsp;dB (on 50&nbsp;Ω), which is roughly what we get with the Chubut&nbsp;1 (or Santa Cruz) board and a second stage 20&nbsp;dB amplifier. Thus, the outputs of the Chubut&nbsp;2 board can be connected straight into the input of an oscilloscope or a digitizer. For further details on the circuit please consult the source files on reference&nbsp;<crossref toid="Reference: Chubut 2 source repo"></crossref>.</p>
+
+<p>The most challenging part in the design of the Chubut&nbsp;2 board was the interface between the main and the carrier boards. The reason is that I was looking for an interface that can handle high frequencies but at the same time minimizes the cost and assembly effort on the carrier board. The high frequency constraint basically implied keeping the distance from the <siglas>DUT</siglas> to the input of the amplifiers as low as possible. After several iterations and visits to the design table, I ended up with a very simple yet amazing<footnote>Yes, I am proud of it 😀. It is simple, functional, cheap and elegant. All the principles of engineering accomplished.</footnote> design which is based on <em>pogo pins</em>. This design, which can be seen in the pictures in <crossref toid="Figure: pictures of the Chubut 2 board"></crossref> and in <crossref toid="Figure: pogo pins detail"></crossref>, uses one pogo pin per channel plus a few additional pins for ground and high voltage. The pogo pins are mounted on the main board. On the carrier board, instead, contact with the pogo pins is made simply with exposed pads on the bottom side of the board. When the carrier is put on top of the main board, the contacts are established. These contacts turn out to be super reliable<footnote>Maybe you have seen the amazing MagSafe magnetic connector by Apple. It uses pogo pins.</footnote> and to my surprise work very well at high frequencies. The type of pogo pin was carefully chosen to match the thickness of the board, and is installed in a non conventional way going from one side to the other. This guarantees that a small amount of pin is exposed on the carrier side just enough for contacting, thus minimizing the distance from the <siglas>DUT</siglas> to the input of the amplifiers, which at high frequencies is crucial. Additionally this design is super flexible in the sense that the pins can be arranged in any way on the surface so if the number of channels is increased in the future it is just a matter of distributing additional pins. According to the datasheet the number of "mating" cycles of the pogos ranges from 1e5 to 1e6&nbsp;<crossref toid="Reference: datahseet of pogo pins"></crossref>, which seems to be enough.</p>
+
+<float class="Figure" id="Figure: pogo pins detail">
+	<image style="width: 100%; max-height: 70vh;" src="media/pogos_detail/1.svg"></image>
+	<floatcaption>Detail of the pogo pins and the carrier board.</floatcaption>
+</float>
+
+<p>As one important test that is usually performed with <siglas>LGAD</siglas>s are beta scans, a hole in the middle of the board is included in the design. This makes it possible for the beta particles to make it through the board. The carrier boards also have a hole, however the size of this hole can vary for different samples layouts.</p>
+
+<p>The design of the board is open source. The source files can be found on reference&nbsp;<crossref toid="Reference: Chubut 2 source repo"></crossref>. For quick reference the layout of the board with some dimensions is shown in <crossref toid="Figure: layout of the Chubut 2"></crossref>.</p>
+
+<float class="Figure" id="Figure: layout of the Chubut 2">
+	<image style="width: 100%; max-height: 70vh;" src="media/chubut_2_layout/1.svg"></image>
+	<floatcaption>Layout of the Chubut&nbsp;2 board.</floatcaption>
+</float>
+
+<p>As a final comment, the number of components and size of each amplifying stage can probably be reduced. The current version (230202) has extra filtering stages and even an attenuator in between the stages to avoid oscillations and be on the safe side. But this can probably be simplified for a higher integration density with more channels.</p>
+
+<h1>Testing</h1>
+
+<p>In this section I present some results of the first tests I performed with the board.</p>
+
+<h2>Transimpedance</h2>
+
+<p>The <em>transimpedance</em> is an important parameter of the readout board as it allows the conversion of charge measurements to Coulomb. In general, for any circuit, the transimpedance is defined as 
+
+<equation id="Equation: transimpedance definition">
+$$\text{transimpedance}\overset{\text{def}}{=}\frac{V_{\text{out}}}{I_{\text{in}}}$$
+</equation>
+
+ and characterizes the current-to-voltage gain of an amplifier. An ideal transimpedance amplifier is a circuit with zero input impedance and zero output impedance, so no matter what the source and load impedances are (as long as they are finite and non-zero) the transimpedance will remain constant. This is what we would like to connect our <siglas>LGAD</siglas>s to so that all the charge makes it to the input of the amplifier and is converted into a voltage signal that can be digitized.</p>
+ 
+ <p><crossref toid="Equation: transimpedance definition"></crossref> can be expanded into 
+ 
+ <equation>$$\text{transimpedance}=\frac{V_{\text{in}}}{I_{\text{DUT}}\frac{Z_{\text{DUT}}}{Z_{\text{DUT}}+Z_{\text{in}}}}\frac{V_{\text{out}}}{V_{\text{in}}}$$</equation>
+ 
+ where $Z_{\text{DUT}}$ is the impedance of the <siglas>DUT</siglas> and $Z_{\text{in}}$ the input impedance of the amplifier. If we assume that we are within the <em>ideal transimpedance amplifier regime</em>, i.e. we assume that $Z_{\text{DUT}}\gg Z_{\text{in}}$, then this becomes<footnote>Note that this assumption also implies that $I_{\text{in}}=I_{\text{DUT}}$.</footnote>
+ 
+ <equation id="Equation: transimpedance formula ideal transimp amp">
+ $$\text{transimpedance ideal}=Z_{\text{in}}\frac{V_{\text{out}}}{V_{\text{in}}}$$
+ </equation>
+ 
+ We can find the parameters of the amplifier in the datasheet&nbsp;<crossref toid="Reference: Mini-Circuits amp datasheet"></crossref>, where an input impedance of 50&nbsp;Ω and a voltage gain of 20&nbsp;dB are specified. Since the board has two stages, this is a total voltage gain of 40&nbsp;dB which is equivalent to 100. Thus,
+ 
+ <equation id="Equation: transimpedance value according to design">
+ $$\text{transimpedance ideal}=5000~\Omega$$
+ </equation>
+
+is the expected value as per design assuming things work as intended.</p>
+
+<p>In order to validate the previous analysis I also want to measure the transimpedance. First of all, if the transimpedance is constant in time (which we expect it to be) then from <crossref toid="Equation: transimpedance definition"></crossref> we can go to
+
+<equation>
+$$\text{transimpedance}=\frac{\int V_{\text{out}}\ \text{d}t}{\int I_{\text{in}}\ \text{d}t}$$
+</equation>
+
+The denominator here is nothing more than the total charge that goes in the input of the amplifier while the numerator can be measured by recording the waveform at the output (e.g. with an oscilloscope) and integrating it. Here I will again assume that we are in the ideal transimpedance regime which in this case implies that the charge in the input of the amplifier is exactly the charge sourced by the <siglas>DUT</siglas> so 
+
+<equation>
+$$\text{transimpedance}=\frac{\int V_{\text{out}}\ \text{d}t}{Q_{\text{DUT}}}$$
+</equation>
+
+If for a <siglas>DUT</siglas> we use a PIN diode, i.e. an "<siglas>LGAD</siglas> with no gain layer" then we can know what to expect as the <siglas>MPV</siglas> for the distribution of $Q_{\text{DUT}}$ when a <siglas>MIP</siglas> impinges on it&nbsp;<crossref toid="Reference: Particle Detectors Fundamentals and Applications Kolanoski"></crossref>. Thus, the transimpedance can be measured with
+
+<equation id="Equation: transimpedance measured">
+$$\text{transimpedance measured}=\frac{\text{MPV of time integral of voltage}}{Q_{\text{MPV for PIN from theory}}}$$
+</equation>
+
+</p>
+
+
+<p>To proceed with the measurement I mounted a PIN from the RD50 FBK TI-LGAD production which has a 2×2 layout with a pad size of 1200×1200&nbsp;µm and a thickness of 45&nbsp;µm, so the <siglas>MPV</siglas> for the charge is then&nbsp;<crossref toid="Reference: Chubut board"></crossref> 0.48&nbsp;fC. I wire bonded the four pads to each of the channels of the Chubut&nbsp;2. Then I placed the board in the climate chamber in the usual configuration for beta scans, i.e. on top of our MCP-PMT, as illustrated in <crossref toid="Figure: schematic of beta setup"></crossref>. Each of the channels of the board were connected to each input of the oscilloscope, a LeCroy WaveRunner 9254M, while the signal from the MCP-PMT was connected to the external trigger input, and it was used to trigger the oscilloscope<footnote>The fact of triggering with the MCP-PMT not only ensures that no bias is introduced by setting a threshold on the <siglas>DUT</siglas> but at the same time the MCP-PMT somehow filters out the low energy tail of the spectrum of the beta source and keeps only the <siglas>MIP</siglas>s, which is desired.</footnote>. I powered the board with 3&nbsp;V as it reduces the power consumption and, in my experience, the performance is not altered.</p>
+
+<float class="Figure" id="Figure: schematic of beta setup">
+	<image style="max-width: 100%; width: 666px;" src="media/setup_schematic.svg"></image>
+	<floatcaption>Schematic diagram of the setup used to measure the transimpedance with a PIN.</floatcaption>
+</float>
+
+<p>I performed several beta scans at different bias voltages. At each voltage I measured the most probable value of the integral of the signal, as explained in&nbsp;<crossref toid="Reference: Charge measurement on radiation silicon detectors with poor SNR"></crossref><footnote>In reference&nbsp;<crossref toid="Reference: Charge measurement on radiation silicon detectors with poor SNR"></crossref> I explain using the amplitude of the signal, but exactly the same procedure can be followed with the integral under the peak of the signal.</footnote>. In <crossref toid="Figure: example of charge fit"></crossref> an example of the charge distribution is shown for one of the voltage that was measured. In this plot the <em>x axis</em> is the integral in time, under the peak, of the waveforms reported by the oscilloscope. From this fit the <siglas>MPV</siglas> of the distribution for the signal was obtained, denoted as <em>x_mpv</em> in the legend of the plot.</p>
+
+<float class="Figure" id="Figure: example of charge fit">
+	<iframe class="plotly" src="media/Collected charge (V s) fit.html"></iframe>
+	<floatcaption>Example of charge fit at one of the voltages measured.</floatcaption>
+</float>
+
+<p>From a series of fits like those shown in <crossref toid="Figure: example of charge fit"></crossref> the numerator from <crossref toid="Equation: transimpedance measured"></crossref> was obtained. Dividing each of these values by the (known and constant) value for the denominator the plot in <crossref toid="Figure: transimpedance plot"></crossref> was obtained. In this plot we can appreciate that the <em>measured transimpedance</em> is a function of the bias voltage, which in principle it should not. The reason is that for low voltages the PIN is not yet fully depleted, and thus the collected charge is lower than expected. For voltages higher than ~30&nbsp;V we see that this quantity reaches a plateau and this is precisely the value that we are looking for. The average of the measured transimpedance both voltage- and channel-wise in region where the bias voltage is higher than 30&nbsp;V is 
+
+<equation id="Equation: measured transimpedance number">
+$$\text{measured transimpedance} = 5070\pm260\ \Omega$$
+</equation>
+
+which is in agreement with the design value from <crossref toid="Equation: transimpedance value according to design"></crossref>. This agreement shows that the input impedance of the amplifier (50&nbsp;Ω) is much lower than that from the <signal>DUT</signal> and so the amplifier behaves almost like an <em>ideal transimpedance amplifier</em>.</p>
+
+<float class="Figure" id="Figure: transimpedance plot">
+	<iframe class="plotly" src="media/transimpedance_plot.html"></iframe>
+	<floatcaption>Measured transimpedance (i.e. the quantity defined by <crossref toid="Equation: transimpedance measured"></crossref>) for different bias voltages and each of the four channels of the board.</floatcaption>
+</float>
+
+<p>With respect to the uncertainty in <crossref toid="Equation: measured transimpedance number"></crossref>, which is about 5&nbsp;%, I am not sure if it is related to systematics in my setup/analysis software or if it is a genuine difference in the transimpedance of each channel. I think that the channel-wise fluctuations seen (in the plateau) in <crossref toid="Figure: transimpedance plot"></crossref> are compatible with the tolerances indicated for the gain in the datasheet of the integrated amplifier&nbsp;<crossref toid="Reference: Mini-Circuits amp datasheet"></crossref>, but a more in-depth study should be performed. For the moment I will just keep this 5&nbsp;% as a systematic of the transimpedance.</p>
+
+<h2>Signal to noise ratio</h2>
+
+<h2>Time resolution</h2>
+
+<h1>Conclusions</h1>
+
+<div id="references_list">
+	<h1 class="unnumbered">References</h1>
+	
+	<reference id="Reference: Santa Cruz board">UcscSingleChannel (Santa Cruz board). <a href="https://twiki.cern.ch/twiki/bin/view/Main/UcscSingleChannel">https://twiki.cern.ch/twiki/bin/view/Main/UcscSingleChannel</a>.</reference>
+	
+	<reference id="Reference: Chubut board">Chubut board. <a href="https://msenger.web.cern.ch/the-chubut-board/">https://msenger.web.cern.ch/the-chubut-board/</a>.</reference></reference>
+	
+	<reference id="Reference: Mini-Circuits amp datasheet">PSA4-5043+,  SMT Low Noise Amplifier, 50 - 4000 MHz, 50Ω .<a href="https://www.minicircuits.com/WebStore/dashboard.html?model=PSA4-5043%2B">https://www.minicircuits.com/WebStore/dashboard.html?model=PSA4-5043%2B</a>.</reference>
+	
+	<reference id="Reference: Chubut 2 source repo">Chubut&nbsp;2 source files repository. <a href="https://github.com/SengerM/Chubut_2">https://github.com/SengerM/Chubut_2</a>.</reference>
+	
+	<reference id="Reference: datahseet of pogo pins">Mill-Max 0965-0-15-20-80-14-11-0. <a href="https://www.mill-max.com/products/discrete-spring-loaded-pins/surface-mount-spring-loaded-pin/0965/0965-0-15-20-80-14-11-0?s_term=0965-0-15-20-80-14-11-0&s_type=Quick/Product/Part%20Number%20Search">https://www.mill-max.com/products/discrete-spring-loaded-pins/surface-mount-spring-loaded-pin/0965/0965-0-15-20-80-14-11-0?s_term=0965-0-15-20-80-14-11-0&amp;s_type=Quick/Product/Part%20Number%20Search</a>.</reference>
+	
+	<reference id="Reference: Particle Detectors Fundamentals and Applications Kolanoski">Kolanoski, Hermann, and Norbert Wermes. Particle Detectors: Fundamentals and Applications. Particle Detectors. Oxford University Press, 2020. <a href="https://cds.cern.ch/record/2721300">https://cds.cern.ch/record/2721300</a>.</reference>
+	
+	<reference id="Reference: Charge measurement on radiation silicon detectors with poor SNR">Charge measurement on radiation silicon detectors with poor SNR. <a href="https://msenger.web.cern.ch/charge-measurement-on-radiation-silicon-detectors-with-poor-snr/">https://msenger.web.cern.ch/charge-measurement-on-radiation-silicon-detectors-with-poor-snr/</a>.</reference>
+</div>
+
+<div id="footnotes_list">
+	<h1 class="unnumbered">Footnotes</h2>
+</div>
+
+<script src="https://sengerm.github.io/html-academic-publishing/css_and_scripts/script.js"></script>
+<script src="https://sengerm.github.io/html-academic-publishing/css_and_scripts/authors.js"></script>
+</body>
+
+</html>
