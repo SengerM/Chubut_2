@@ -1,6 +1,6 @@
 # Chubut_2
 
-Files to fabricate the *Chubut 2 prototype* boards, from which the one in the picture below worked very well. More info [here](https://msenger.web.cern.ch/chubut-2-board-prototype/).
+The *Chubut 2* is a 4 channel readout board designed to operate with Low Gain Avalanche Detectors (LGADs). This repository contains the board design source files. Detailed documentation about the board can be found [here](https://sengerm.github.io/Chubut_2/doc/testing/index.html).
 
 ![Chubut 2 board layout](doc/testing/media/chubut_2_layout/1.svg)
 
