@@ -109,75 +109,83 @@
 $$\text{transimpedance}\overset{\text{def}}{=}\frac{V_{\text{out}}}{I_{\text{in}}}$$
 </equation>
 
- and characterizes the current-to-voltage gain of an amplifier. An ideal transimpedance amplifier is a circuit with zero input impedance and zero output impedance, so no matter what the source and load impedances are (as long as they are finite and non-zero) the transimpedance will remain constant. This is what we would like to connect our <siglas>LGAD</siglas>s to so that all the charge makes it to the input of the amplifier and is converted into a voltage signal that can be digitized.</p>
+and characterizes the current-to-voltage gain of an amplifier. Since we are interested in measure the current flowing through a <siglas>DUT</siglas> we can also define an <em>effective transimpedance</em> as 
+
+<equation id="Equation: effective transimpedance definition">
+$$\text{effective transimpedance}\overset{\text{def}}{=}\frac{V_{\text{out}}}{I_{\text{DUT}}}$$
+</equation>
+
+which measures the relation between the output voltage of the circuit and the current in our <siglas>DUT</siglas>. An ideal transimpedance amplifier is a circuit with zero input impedance and zero output impedance, so no matter what the source and load impedances are (as long as they are finite and non-zero) the effective transimpedance will coincide with the transimpedance. This is the kind of amplifier we would like to have, so that all the charge from the <siglas>DUT</siglas> makes it to the input of the amplifier and is converted into a voltage signal that can be digitized without loss.</p>
  
- <p><crossref toid="Equation: transimpedance definition"></crossref> can be expanded into 
+<p><crossref toid="Equation: effective transimpedance definition"></crossref> can be expanded into 
  
- <equation>$$\text{transimpedance}=\frac{V_{\text{in}}}{I_{\text{DUT}}\frac{Z_{\text{DUT}}}{Z_{\text{DUT}}+Z_{\text{in}}}}\frac{V_{\text{out}}}{V_{\text{in}}}$$</equation>
+<equation>
+$$\text{effective transimpedance}=\frac{V_{\text{out}}}{I_{\text{in}}\frac{Z_{\text{DUT}}+Z_{\text{in}}}{Z_{\text{DUT}}}}$$
+</equation>
  
- where $Z_{\text{DUT}}$ is the impedance of the <siglas>DUT</siglas> and $Z_{\text{in}}$ the input impedance of the amplifier. If we assume that we are within the <em>ideal transimpedance amplifier regime</em>, i.e. we assume that $Z_{\text{DUT}}\gg Z_{\text{in}}$, then this becomes<footnote>Note that this assumption also implies that $I_{\text{in}}=I_{\text{DUT}}$.</footnote>
+where $Z_{\text{DUT}}$ is the impedance of the <siglas>DUT</siglas> and $Z_{\text{in}}$ the input impedance of the amplifier. If we assume that we are within the <em>ideal transimpedance amplifier regime</em>, i.e. we assume that $Z_{\text{DUT}}\gg Z_{\text{in}}$, then this becomes<footnote>Note that this assumption also implies, as stated before, that $I_{\text{in}}=I_{\text{DUT}}$.</footnote>
  
- <equation id="Equation: transimpedance formula ideal transimp amp">
- $$\text{transimpedance ideal}=Z_{\text{in}}\frac{V_{\text{out}}}{V_{\text{in}}}$$
- </equation>
+<equation id="Equation: transimpedance formula ideal transimp amp">
+$$\text{effective transimpedance ideal}=Z_{\text{in}}\frac{V_{\text{out}}}{V_{\text{in}}}$$
+</equation>
  
- We can find the parameters of the amplifier in the datasheet&nbsp;<crossref toid="Reference: Mini-Circuits amp datasheet"></crossref>, where an input impedance of 50&nbsp;Ω and a voltage gain of 20&nbsp;dB are specified. Since the board has two stages, this is a total voltage gain of 40&nbsp;dB which is equivalent to 100. Thus,
+We can find the parameters of the amplifier in the datasheet&nbsp;<crossref toid="Reference: Mini-Circuits amp datasheet"></crossref>, where an input impedance of 50&nbsp;Ω and a voltage gain of 20&nbsp;dB are specified. Since the board has two stages, this is a total voltage gain of 40&nbsp;dB which is equivalent to 100. Thus,
  
- <equation id="Equation: transimpedance value according to design">
- $$\text{transimpedance ideal}=5000~\Omega$$
- </equation>
+<equation id="Equation: transimpedance value according to design">
+$$\text{effective transimpedance ideal}=5000~\Omega$$
+</equation>
 
 is the expected value as per design assuming things work as intended.</p>
 
-<p>In order to validate the previous analysis I also want to measure the transimpedance. First of all, if the transimpedance is constant in time (which we expect it to be) then from <crossref toid="Equation: transimpedance definition"></crossref> we can go to
+<p>In order to validate the previous analysis I also want to measure the effective transimpedance. First of all, if the effective transimpedance is constant in time (which we expect it to be) then from <crossref toid="Equation: effective transimpedance definition"></crossref> we can go to
 
 <equation>
-$$\text{transimpedance}=\frac{\int V_{\text{out}}\ \text{d}t}{\int I_{\text{in}}\ \text{d}t}$$
+$$\text{effective transimpedance}=\frac{\int V_{\text{out}}\ \text{d}t}{\int I_{\text{DUT}}\ \text{d}t}$$
 </equation>
 
-The denominator here is nothing more than the total charge that goes in the input of the amplifier while the numerator can be measured by recording the waveform at the output (e.g. with an oscilloscope) and integrating it. Here I will again assume that we are in the ideal transimpedance regime which in this case implies that the charge in the input of the amplifier is exactly the charge sourced by the <siglas>DUT</siglas> so 
+The denominator here is nothing more than the total charge produced in the <siglas>DUT</siglas> while the numerator can be measured by recording the waveform at the output (e.g. with an oscilloscope) and integrating it. Thus, 
 
 <equation>
-$$\text{transimpedance}=\frac{\int V_{\text{out}}\ \text{d}t}{Q_{\text{DUT}}}$$
+$$\text{effective transimpedance}=\frac{\int V_{\text{out}}\ \text{d}t}{Q_{\text{DUT}}}$$
 </equation>
 
-If for a <siglas>DUT</siglas> we use a PIN diode, i.e. an "<siglas>LGAD</siglas> with no gain layer" then we can know what to expect as the <siglas>MPV</siglas> for the distribution of $Q_{\text{DUT}}$ when a <siglas>MIP</siglas> impinges on it&nbsp;<crossref toid="Reference: Particle Detectors Fundamentals and Applications Kolanoski"></crossref>. Thus, the transimpedance can be measured with
+If for a <siglas>DUT</siglas> we use a PIN diode, i.e. an "<siglas>LGAD</siglas> with no gain layer" then we know what to expect for the charge $Q_{\text{DUT}}$ when a <siglas>MIP</siglas> impinges on it. The charge will follow a Landau distribution with a known <siglas>MPV</siglas>&nbsp;<crossref toid="Reference: Particle Detectors Fundamentals and Applications Kolanoski"></crossref> that can be calculated. Thus, the transimpedance can be measured with
 
 <equation id="Equation: transimpedance measured">
-$$\text{transimpedance measured}=\frac{\text{MPV of time integral of voltage}}{Q_{\text{MPV for PIN from theory}}}$$
+$$\text{effective transimpedance measured}=\frac{\text{MPV of time integral of voltage}}{Q_{\text{MPV for fully depleted PIN from theory}}}$$
 </equation>
 
 </p>
 
 
-<p>To proceed with the measurement I mounted a PIN from the RD50 FBK TI-LGAD production which has a 2×2 layout with a pad size of 1200×1200&nbsp;µm and a thickness of 45&nbsp;µm, so the <siglas>MPV</siglas> for the charge is then&nbsp;<crossref toid="Reference: Chubut board"></crossref> 0.48&nbsp;fC. I wire bonded the four pads to each of the channels of the Chubut&nbsp;2. Then I placed the board in the climate chamber in the usual configuration for beta scans, i.e. on top of our MCP-PMT, as illustrated in <crossref toid="Figure: schematic of beta setup"></crossref>. Each of the channels of the board were connected to each input of the oscilloscope, a LeCroy WaveRunner 9254M, while the signal from the MCP-PMT was connected to the external trigger input, and it was used to trigger the oscilloscope<footnote>The fact of triggering with the MCP-PMT not only ensures that no bias is introduced by setting a threshold on the <siglas>DUT</siglas> but at the same time the MCP-PMT somehow filters out the low energy tail of the spectrum of the beta source and keeps only the <siglas>MIP</siglas>s, which is desired.</footnote>. I powered the board with 3&nbsp;V as it reduces the power consumption and, in my experience, the performance is not altered.</p>
+<p>To proceed with the measurement I mounted a PIN from the RD50 FBK TI-LGAD production which has a 2×2 layout with a pad size of 1200×1200&nbsp;µm and a thickness of 45&nbsp;µm, so the <siglas>MPV</siglas> for the charge, when fully depleted, is 0.48&nbsp;fC&nbsp;<crossref toid="Reference: Chubut board"></crossref>. I wire bonded the four pads of the PIN to each of the channels of the Chubut&nbsp;2. Then I placed the board in the climate chamber in the usual configuration for beta scans, i.e. on top of our MCP-PMT, as illustrated in <crossref toid="Figure: schematic of beta setup"></crossref>. The climate chamber was set at -20&nbsp;°C. Each of the channels of the board were connected to each input of the oscilloscope, a LeCroy WaveRunner 9254M, while the signal from the MCP-PMT was connected to the external trigger input, and it was used to trigger the oscilloscope<footnote>The fact of triggering with the MCP-PMT not only ensures that no bias is introduced by setting a threshold on the <siglas>DUT</siglas> but at the same time the MCP-PMT somehow filters out the low energy tail of the spectrum of the beta source and keeps only the <siglas>MIP</siglas>s, which is desired.</footnote>. I powered the board with 3&nbsp;V as it reduces the power consumption and, in my experience, the performance is not altered.</p>
 
 <float class="Figure" id="Figure: schematic of beta setup">
 	<image style="max-width: 100%; width: 666px;" src="media/setup_schematic.svg"></image>
-	<floatcaption>Schematic diagram of the setup used to measure the transimpedance with a PIN.</floatcaption>
+	<floatcaption>Schematic diagram of the setup used to measure the effective transimpedance with a PIN.</floatcaption>
 </float>
 
-<p>I performed several beta scans at different bias voltages. At each voltage I measured the most probable value of the integral of the signal, as explained in&nbsp;<crossref toid="Reference: Charge measurement on radiation silicon detectors with poor SNR"></crossref><footnote>In reference&nbsp;<crossref toid="Reference: Charge measurement on radiation silicon detectors with poor SNR"></crossref> I explain using the amplitude of the signal, but exactly the same procedure can be followed with the integral under the peak of the signal.</footnote>. In <crossref toid="Figure: example of charge fit"></crossref> an example of the charge distribution is shown for one of the voltage that was measured. In this plot the <em>x axis</em> is the integral in time, under the peak, of the waveforms reported by the oscilloscope. From this fit the <siglas>MPV</siglas> of the distribution for the signal was obtained, denoted as <em>x_mpv</em> in the legend of the plot.</p>
+<p>I performed several beta scans at different bias voltages. At each voltage I measured the most probable value of the integral of the signal, as explained in&nbsp;<crossref toid="Reference: Charge measurement on radiation silicon detectors with poor SNR"></crossref><footnote>In reference&nbsp;<crossref toid="Reference: Charge measurement on radiation silicon detectors with poor SNR"></crossref> I explain using the amplitude of the signal, but exactly the same procedure can be followed with the integral under the peak of the signal.</footnote>. In <crossref toid="Figure: example of charge fit"></crossref> an example of the charge distribution is shown for one of the voltages that were measured. In this plot the <em>x axis</em> is the integral in time, under the peak, of the waveforms reported by the oscilloscope. From these fits, the <siglas>MPV</siglas> of the distribution for the signal was obtained, denoted as <em>x_mpv</em> in the legend of the plot.</p>
 
 <float class="Figure" id="Figure: example of charge fit">
 	<iframe class="plotly" src="media/Collected charge (V s) fit.html"></iframe>
 	<floatcaption>Example of charge fit at one of the voltages measured.</floatcaption>
 </float>
 
-<p>From a series of fits like those shown in <crossref toid="Figure: example of charge fit"></crossref> the numerator from <crossref toid="Equation: transimpedance measured"></crossref> was obtained. Dividing each of these values by the (known and constant) value for the denominator the plot in <crossref toid="Figure: transimpedance plot"></crossref> was obtained. In this plot we can appreciate that the <em>measured transimpedance</em> is a function of the bias voltage, which in principle it should not. The reason is that for low voltages the PIN is not yet fully depleted, and thus the collected charge is lower than expected. For voltages higher than ~30&nbsp;V we see that this quantity reaches a plateau and this is precisely the value that we are looking for. The average of the measured transimpedance both voltage- and channel-wise in region where the bias voltage is higher than 30&nbsp;V is 
+<p>From a series of fits like those shown in <crossref toid="Figure: example of charge fit"></crossref> the numerator from <crossref toid="Equation: transimpedance measured"></crossref> was obtained. Dividing each of these values by the (known and constant) value for the denominator, the plot in <crossref toid="Figure: transimpedance plot"></crossref> was obtained. In this plot we can appreciate that the <em>measured effective transimpedance</em> is a function of the bias voltage, although in principle it should not. The reason is that for low voltages the PIN is not yet fully depleted, and thus the collected charge is lower than expected. For voltages higher than ~30&nbsp;V we see that this quantity reaches a plateau which indicates that the PIN is fully depleted so this is the region in which to look for. The average of the measured effective transimpedance both voltage- and channel-wise in region where the bias voltage is higher than 30&nbsp;V is 
 
 <equation id="Equation: measured transimpedance number">
-$$\text{measured transimpedance} = 5070\pm260\ \Omega$$
+$$\text{measured effective transimpedance} = 5050\pm250\ \Omega$$
 </equation>
 
-which is in agreement with the design value from <crossref toid="Equation: transimpedance value according to design"></crossref>. This agreement shows that the input impedance of the amplifier (50&nbsp;Ω) is much lower than that from the <signal>DUT</signal> and so the amplifier behaves almost like an <em>ideal transimpedance amplifier</em>.</p>
+which is in agreement with the design value from <crossref toid="Equation: transimpedance value according to design"></crossref>. This agreement shows that the input impedance of the amplifier (50&nbsp;Ω) is much lower than that from the <signal>DUT</signal> and so the amplifier behaves like an <em>ideal transimpedance amplifier</em>.</p>
 
 <float class="Figure" id="Figure: transimpedance plot">
 	<iframe class="plotly" src="media/transimpedance_plot.html"></iframe>
-	<floatcaption>Measured transimpedance (i.e. the quantity defined by <crossref toid="Equation: transimpedance measured"></crossref>) for different bias voltages and each of the four channels of the board.</floatcaption>
+	<floatcaption>Measured effective transimpedance (i.e. the quantity defined by <crossref toid="Equation: transimpedance measured"></crossref>) for different bias voltages and each of the four channels of the board.</floatcaption>
 </float>
 
-<p>With respect to the uncertainty in <crossref toid="Equation: measured transimpedance number"></crossref>, which is about 5&nbsp;%, I am not sure if it is related to systematics in my setup/analysis software or if it is a genuine difference in the transimpedance of each channel. I think that the channel-wise fluctuations seen (in the plateau) in <crossref toid="Figure: transimpedance plot"></crossref> are compatible with the tolerances indicated for the gain in the datasheet of the integrated amplifier&nbsp;<crossref toid="Reference: Mini-Circuits amp datasheet"></crossref>, but a more in-depth study should be performed. For the moment I will just keep this 5&nbsp;% as a systematic of the transimpedance.</p>
+<p>With respect to the uncertainty in <crossref toid="Equation: measured transimpedance number"></crossref>, which is about 5&nbsp;%, I am not sure if it is related to systematics in my setup/analysis software or if it is a genuine difference in the transimpedance of each channel. I think that the channel-wise fluctuations seen (in the plateau) in <crossref toid="Figure: transimpedance plot"></crossref> are compatible with the tolerances indicated for the gain in the datasheet of the integrated amplifier&nbsp;<crossref toid="Reference: Mini-Circuits amp datasheet"></crossref> so they could be genuine transimpedance differences. However, a more in-depth study should be performed to verify this. For the moment I will just keep this 5&nbsp;% as a systematic of the transimpedance.</p>
 
 <h2>Signal to noise ratio</h2>
 
