@@ -42,6 +42,9 @@
 <siglas class="definition" first="Electromagnetic Interference (EMI)" short="EMI"></siglas>
 <siglas class="definition" first="Most Probable Value (MPV)" short="MPV"></siglas>
 <siglas class="definition" first="Minimum Ionizing Particle (MIP)" short="MIP"></siglas>
+<siglas class="definition" first="Universität Zürich (UZH)" short="UZH"></siglas>
+<siglas class="definition" first="Signal to Noise Ratio (SNR)" short="SNR"></siglas>
+<siglas class="definition" first="Empirical Cumulative Distribution Function (ECDF)" short="ECDF"></siglas>
 
 <abstract>
 	<p>The <em>Chubut&nbsp;2</em> is a discrete readout board for testing <siglas>LGAD</siglas> samples. It was designed having in mind not only good electrical characteristics but also with a focus on simplifying the workflow in the lab. In this document details and a characterization of this board are presented. The design is open source and the source files can be found in reference&nbsp;<crossref toid="Reference: Chubut 2 source repo"></crossref>.</p>
@@ -100,6 +103,15 @@
 <h1>Testing</h1>
 
 <p>In this section I present some results of the first tests I performed with the board.</p>
+
+<h2>Time resolution</h2>
+
+<p>In the context of my PhD it is probably the <em>time resolution</em> the most important parameter to be measured. So here I am presenting results of time resolution measured with the newer Chubut 2 board and comparing it with measurements done in similar conditions using the older readout board <em>Chubut&nbsp;1</em>&nbsp;<crossref toid="Reference: Chubut board"></crossref>. The results are shown in <crossref toid="Figure: time resolution comparison"></crossref>. To perform the measurement a <siglas>TI-LGAD</siglas> from the RD50 production (wafer 16, 1 trench, pixel border V3, contact type dot) was used. In blue the results from the Chubut&nbsp;1 board, in red the result using the Chubut&nbsp;2. As seen, the results are in agreement. This data was obtained in our beta setup at <siglas>UZH</siglas>&nbsp;<crossref toid="Reference: The Robocold setup"></crossref>.</p>
+
+<float class="Figure" id="Figure: time resolution comparison">
+	<iframe class="plotly" src="media/time_resolution_comparison.html"></iframe>
+	<floatcaption>Comparison of time resolution measured with the older <em>Chubut&nbsp;1</em> board and the <em>Chubut&nbsp;2</em> board.</floatcaption>
+</float>
 
 <h2>Transimpedance</h2>
 
@@ -189,7 +201,12 @@ which is in agreement with the design value from <crossref toid="Equation: trans
 
 <h2>Signal to noise ratio</h2>
 
-<h2>Time resolution</h2>
+<p>A comparison of the <siglas>SNR</siglas> is shown in <crossref toid="Figure: SNR comparison"></crossref>. In this plot the <siglas>ECDF</siglas> for a single voltage measured with each board is shown. As seen the results are in essence the same.</p>
+
+<float class="Figure" id="Figure: SNR comparison">
+	<iframe class="plotly" src="media/SNR_comparison.html"></iframe>
+	<floatcaption>Comparison of <siglas>SNR</siglas> measured with the older <em>Chubut&nbsp;1</em> board and the <em>Chubut&nbsp;2</em> board at 245&nbsp;V.</floatcaption>
+</float>
 
 <h1>Conclusions</h1>
 
@@ -209,6 +226,8 @@ which is in agreement with the design value from <crossref toid="Equation: trans
 	<reference id="Reference: Particle Detectors Fundamentals and Applications Kolanoski">Kolanoski, Hermann, and Norbert Wermes. Particle Detectors: Fundamentals and Applications. Particle Detectors. Oxford University Press, 2020. <a href="https://cds.cern.ch/record/2721300">https://cds.cern.ch/record/2721300</a>.</reference>
 	
 	<reference id="Reference: Charge measurement on radiation silicon detectors with poor SNR">Charge measurement on radiation silicon detectors with poor SNR. <a href="https://msenger.web.cern.ch/charge-measurement-on-radiation-silicon-detectors-with-poor-snr/">https://msenger.web.cern.ch/charge-measurement-on-radiation-silicon-detectors-with-poor-snr/</a>.</reference>
+	
+	<reference id="Reference: The Robocold setup">The Robocold setup (UZH beta setup). <a href="https://msenger.web.cern.ch/the-robocold-beta-setup/">https://msenger.web.cern.ch/the-robocold-beta-setup/</a>.</reference>
 </div>
 
 <div id="footnotes_list">
