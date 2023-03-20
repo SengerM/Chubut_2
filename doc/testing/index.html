@@ -56,7 +56,7 @@
 
 <h1>Introduction</h1>
 
-<p>Since I started my PhD I have been testing several <siglas>LGAD</siglas> devices, and variations such as <siglas>TI-LGAD</siglas> and others. All these devices are samples intended for research purposes, i.e. with relatively small number of pixels and literally hundreds of different flavors with different characteristics. To test these samples I was using the so called <em>Santa Cruz board</em>&nbsp;<crossref toid="Reference: Santa Cruz board"></crossref> or a variation of it called the <em>Chubut board</em>&nbsp;<crossref toid="Reference: Chubut board"></crossref>. These are single channel readout boards with a built in single stage amplifier in which the sample is stick onto a high voltage pad, and then wire bonded to the board itself.</p>
+<p>Since I started my PhD I have been testing several <siglas>LGAD</siglas> devices, and variations such as <siglas>TI-LGAD</siglas> and others. All these devices are samples intended for research purposes, i.e. with relatively small number of pixels and literally hundreds of different flavors with different characteristics. To test these samples I was using the so called <em>Santa Cruz board</em>&nbsp;<crossref toid="Reference: Santa Cruz board"></crossref> or a variation of it called the <em>Chubut board</em> (or <em>Chubut&nbsp;1</em>)&nbsp;<crossref toid="Reference: Chubut board"></crossref>. These are single channel readout boards with a built in single stage amplifier in which the sample is stick onto a high voltage pad, and then wire bonded to the board itself.</p>
 <p>Though these boards can get the job done, they present some inconveniences when the number of samples to be tested grows, as each time a new sample has to be tested, the old sample has to be removed thus destroying the wire bondings. As the number of times a sample can be wire bonded is finite, this makes it not only tedious but in some cases impossible to repeat a test on a sample that has previously been tested. Additionally, after some number of tested sensors the board as well wears and it cannot be further wire bonded<footnote>I have experienced this with several boards, that when new the wires stick perfectly to the bonding pads but after some number of usages it becomes impossible to wire bond them again. In some cases this <em>number of usages</em> was relatively large (say about ten) but in some other cases it was as low as only one usage. I believe this is related to some effect related to moisture with the cooling and warming cycles required for each test. But I still don't know it for sure.</footnote>, having to be replaced with a new one. In doing this we are discarding a whole board which completely operational except that the wires do not stick, which is not just pity but it also complicates the logistics because I found myself sometimes without useful boards and still with sensors to be tested. Furthermore the amplification provided by these boards is usually not enough to go straight into a digitizer (or an oscilloscope) and a 20&nbsp;dB second stage amplifier has to be used.</p>
 <p>To overcome these issues I decided to develop a new board from scratch, which is the <em>Chubut&nbsp;2</em> board. It incorporates a design with a carrier board&nbsp;+&nbsp;a main board. The main board hosts all the circuitry and connectors while the carrier board is a super-cheap board which only hosts the <siglas>DUT</siglas>. In this way the main board can be reused up to infinite times<footnote>Well, it probably has a limit but for sure it is more than 1e3 times according to the specifications of the components.</footnote> with different carriers. The fact that the carrier only hosts the <siglas>DUT</siglas> makes it very cheap (when compared with the main board, or with one of the other readout boards) and thus it is feasible to produce one carrier for each <siglas>DUT</siglas>, and even with different designs to adapt the wire bondings to the <siglas>DUT</siglas>'s layout. The current design possesses 4 independent (and identical) channels, and each channel has two amplification stages leading to a total of ~40&nbsp;dB voltage gain (on 50&nbsp;Ω input and output).</p>
 
@@ -98,6 +98,13 @@
 	<floatcaption>Layout of the Chubut&nbsp;2 board.</floatcaption>
 </float>
 
+<p>In <crossref toid="Figure: circuit of one channel"></crossref> the electrical schematic of each channel is shown. As seen each channel has two amplifying stages and there is a 3&nbsp;dB resistive pi attenuator in between<footnote>As suggestion from the electronics workshop at our institute, to avoid undesired oscillations.</footnote>. Each of the pads is DC-grounded via a 10&nbsp;kΩ resistor hanging from the input.</p>
+
+<float class="Figure" id="Figure: circuit of one channel">
+	<image style="width: 100%; max-height: 70vh;" src="media/schematic/schematic.svg"></image>
+	<floatcaption>Electrical schematic of one channel of the Chubut&nbsp;2.</floatcaption>
+</float>
+
 <p>As a final comment, the number of components and size of each amplifying stage can probably be reduced. The current version (230202) has extra filtering stages on the power supply, and soldering pads for RF shields (which seem to be not necessary), etc. This can probably be simplified for a higher integration density with more channels.</p>
 
 <h1>Characterization</h1>
@@ -106,7 +113,7 @@
 
 <h2>Time resolution</h2>
 
-<p>In the context of my PhD it is probably the <em>time resolution</em> the most important parameter to be measured. So here I am presenting results of time resolution measured with the newer Chubut 2 board and comparing it with measurements done in similar conditions using the older readout board <em>Chubut&nbsp;1</em>&nbsp;<crossref toid="Reference: Chubut board"></crossref>. The results are shown in <crossref toid="Figure: time resolution comparison"></crossref>. To perform the measurement a <siglas>TI-LGAD</siglas> from the RD50 production (wafer 16, 1 trench, pixel border V3, contact type dot) was used. In blue the results from the Chubut&nbsp;1 board, in red the result using the Chubut&nbsp;2. As seen, the results are in agreement. This data was obtained in our beta setup at <siglas>UZH</siglas>&nbsp;<crossref toid="Reference: The Robocold setup"></crossref>.</p>
+<p>In the context of my PhD it is probably the <em>time resolution</em> the most important parameter to be measured. So here I am presenting results of time resolution measured with the newer Chubut 2 board and comparing it with measurements done in similar conditions using the older readout board <em>Chubut&nbsp;1</em>&nbsp;<crossref toid="Reference: Chubut board"></crossref>. The results are shown in <crossref toid="Figure: time resolution comparison"></crossref>. To perform the measurement a <siglas>TI-LGAD</siglas> from the RD50 production (wafer 16, 1 trench, pixel border V3, contact type dot) was used. In blue the results from the Chubut&nbsp;1 board, in red the result using the Chubut&nbsp;2. As seen, the results are in agreement. This data was obtained in our beta setup at <siglas>UZH</siglas>&nbsp;<crossref toid="Reference: The Robocold setup"></crossref>. </p>
 
 <float class="Figure" id="Figure: time resolution comparison">
 	<iframe class="plotly" src="media/time_resolution_comparison.html"></iframe>
@@ -198,7 +205,7 @@ $$\text{effective transimpedance measured}=\frac{\text{MPV of time integral of v
 $$\text{measured effective transimpedance} = 5050\pm250\ \Omega$$
 </equation>
 
-There is a disagreement with respect to the design value from <crossref toid="Equation: transimpedance value according to design"></crossref>. The reason for this disagreement is probably due to the fact that the effective transimpedance is not flat over all the frequency spectrum of the signals. I still don't know the exact reason for this, but I am sure it is related to the falling edge of the signals, as discussed in <crossref toid="Waveforms"></crossref>.</p>
+There is a disagreement with respect to the design value from <crossref toid="Equation: transimpedance value according to design"></crossref>. The reason for this disagreement is still not clear to me, but it is probably related to the falling edge of the signals, as discussed in <crossref toid="Waveforms"></crossref>.</p>
 
 <float class="Figure" id="Figure: transimpedance plot">
 	<iframe class="plotly" src="media/transimpedance/Collected charge (V s C^-1) to Coulomb conversion factor vs bias voltage.html"></iframe>
@@ -255,6 +262,8 @@ $$\text{charge in Coulomb}\approx\frac{\text{amplitude}}{\left(5.67\pm0.25\right
 </float>
 
 <h1>Conclusions</h1>
+
+<p>A multichannel readout board for <siglas>LGAD</siglas>s was developed with a novel interconnection mechanism that allows for an easy interchange between different samples. The produced version of the board has four channels, but it can easily be modified. Each channel has two amplifying stages implemented with integrated RF amplifiers thus providing enough amplification to connect the board straight into a digitizer or an oscilloscope. A time resolution measurement with an <siglas>LGAD</siglas> mounted in the new board was performed and the results show it is good. There is a disagreement between the expected transimpedance and the measured transimpedance which is still to be studied.</p>
 
 <div id="references_list">
 	<h1 class="unnumbered">References</h1>
