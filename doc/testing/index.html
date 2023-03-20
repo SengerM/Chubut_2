@@ -100,7 +100,7 @@
 
 <p>As a final comment, the number of components and size of each amplifying stage can probably be reduced. The current version (230202) has extra filtering stages on the power supply, and soldering pads for RF shields (which seem to be not necessary), etc. This can probably be simplified for a higher integration density with more channels.</p>
 
-<h1>Testing</h1>
+<h1>Characterization</h1>
 
 <p>In this section I present some results of the first tests I performed with the board.</p>
 
@@ -115,7 +115,7 @@
 
 <h2>Transimpedance</h2>
 
-<p>The <em>transimpedance</em> is an important parameter of the readout board as it allows the conversion of charge measurements to Coulomb. In general, for any circuit, the transimpedance is defined as 
+<p>The <em>transimpedance</em> is an important parameter of the readout board as it allows the conversion of charge measurements to Coulomb. In general, for any circuit, the transimpedance is defined (in the frequency domain) as 
 
 <equation id="Equation: transimpedance definition">
 $$\text{transimpedance}\overset{\text{def}}{=}\frac{V_{\text{out}}}{I_{\text{in}}}$$
@@ -141,15 +141,23 @@ where $Z_{\text{DUT}}$ is the impedance of the <siglas>DUT</siglas> and $Z_{\tex
 $$\text{effective transimpedance ideal}=Z_{\text{in}}\frac{V_{\text{out}}}{V_{\text{in}}}$$
 </equation>
  
-We can find the parameters of the amplifier in the datasheet&nbsp;<crossref toid="Reference: Mini-Circuits amp datasheet"></crossref>, where an input impedance of 50&nbsp;Ω and a voltage gain of 20&nbsp;dB are specified. Since the board has two stages, this is a total voltage gain of 40&nbsp;dB which is equivalent to 100. Thus,
+We can find the parameters of the amplifier in the datasheet&nbsp;<crossref toid="Reference: Mini-Circuits amp datasheet"></crossref>, where an input impedance of 50&nbsp;Ω and a voltage gain of 20&nbsp;dB are specified. Since the board has two stages, this is a total voltage gain of 40&nbsp;dB which is equivalent to 100. There is a 3&nbsp;dB pi&nbsp;attenuator in between the two stages. Thus,
  
 <equation id="Equation: transimpedance value according to design">
-$$\text{effective transimpedance ideal}=5000~\Omega$$
+$$\text{effective transimpedance ideal} \approx 3540~\Omega$$
 </equation>
 
 is the expected value as per design assuming things work as intended.</p>
 
-<p>In order to validate the previous analysis I also want to measure the effective transimpedance. First of all, if the effective transimpedance is constant in time (which we expect it to be) then from <crossref toid="Equation: effective transimpedance definition"></crossref> we can go to
+<p>In order to validate the previous analysis I also want to measure the effective transimpedance. First of all, if we assume that the effective transimpedance is flat<footnote>I.e. independent of frequency. This implies that in the time domain 
+$$
+\begin{align*}
+V_{\text{out}}\left(t\right) & =\intop V_{\text{in}}\left(\tau\right)\text{effective transimpedance}\left(t-\tau\right)\text{d}\tau\\
+ & =\text{effective transimpedance}\intop V_{\text{in}}\left(\tau\right)\delta\left(t-\tau\right)\text{d}\tau\\
+ & =\text{effective transimpedance}V_{\text{in}}\left(t\right)
+\end{align*}
+$$
+where $\delta$ is the Dirac delta function.</footnote> within the bandwidth of our signals then from <crossref toid="Equation: effective transimpedance definition"></crossref> we can go to
 
 <equation>
 $$\text{effective transimpedance}=\frac{\int V_{\text{out}}\ \text{d}t}{\int I_{\text{DUT}}\ \text{d}t}$$
@@ -190,18 +198,56 @@ $$\text{effective transimpedance measured}=\frac{\text{MPV of time integral of v
 $$\text{measured effective transimpedance} = 5050\pm250\ \Omega$$
 </equation>
 
-which is in agreement with the design value from <crossref toid="Equation: transimpedance value according to design"></crossref>. This agreement shows that the input impedance of the amplifier (50&nbsp;Ω) is much lower than that from the <signal>DUT</signal> and so the amplifier behaves like an <em>ideal transimpedance amplifier</em>.</p>
+There is a disagreement with respect to the design value from <crossref toid="Equation: transimpedance value according to design"></crossref>. The reason for this disagreement is probably due to the fact that the effective transimpedance is not flat over all the frequency spectrum of the signals. I still don't know the exact reason for this, but I am sure it is related to the falling edge of the signals, as discussed in <crossref toid="Waveforms"></crossref>.</p>
 
 <float class="Figure" id="Figure: transimpedance plot">
-	<iframe class="plotly" src="media/transimpedance_plot.html"></iframe>
-	<floatcaption>Measured effective transimpedance (i.e. the quantity defined by <crossref toid="Equation: transimpedance measured"></crossref>) for different bias voltages and each of the four channels of the board.</floatcaption>
+	<iframe class="plotly" src="media/transimpedance/Collected charge (V s C^-1) to Coulomb conversion factor vs bias voltage.html"></iframe>
+	<floatcaption>Measured effective transimpedance (i.e. the quantity defined by <crossref toid="Equation: transimpedance measured"></crossref>) for different bias voltages and each of the four channels of the board using a PIN diode from the <siglas>TI-LGAD</siglas> production.</floatcaption>
 </float>
 
-<p>With respect to the uncertainty in <crossref toid="Equation: measured transimpedance number"></crossref>, which is about 5&nbsp;%, I am not sure if it is related to systematics in my setup/analysis software or if it is a genuine difference in the transimpedance of each channel. I think that the channel-wise fluctuations seen (in the plateau) in <crossref toid="Figure: transimpedance plot"></crossref> are compatible with the tolerances indicated for the gain in the datasheet of the integrated amplifier&nbsp;<crossref toid="Reference: Mini-Circuits amp datasheet"></crossref> so they could be genuine transimpedance differences. However, a more in-depth study should be performed to verify this. For the moment I will just keep this 5&nbsp;% as a systematic of the transimpedance.</p>
+<p>Since in this kind of setup with <siglas>LGAD</siglas>s the charge is, to the best of my knowledge, proportional to the amplitude of the signals, I performed the same kind of data analysis as shown in <crossref toid="Figure: transimpedance plot"></crossref> but instead of using the integral under the peak using the amplitude of the signals. The results are shwon in <crossref toid="Figure: transimpedance plot using amplitude"></crossref>. From this measurement:
+
+<equation id="Equation: amplitude to Coulomb factor measured">
+$$\text{charge in Coulomb}\approx\frac{\text{amplitude}}{\left(5.67\pm0.25\right)\times10^{12}}$$
+</equation>
+
+</p>
+
+<float class="Figure" id="Figure: transimpedance plot using amplitude">
+	<iframe class="plotly" src="media/transimpedance/Amplitude (V C^-1) to Coulomb conversion factor vs bias voltage.html"></iframe>
+	<floatcaption>Measured <em>amplitude to Coulomb</em> conversion factor for different bias voltages and each of the four channels of the board using a PIN diode from the <siglas>TI-LGAD</siglas> production.</floatcaption>
+</float>
+
+<h3>About the conversion to Coulomb</h3>
+
+<p>In order to obtain the collected charge in Coulomb units it is possible either to divide the integral of the signal by the effective transimpedance from <crossref toid="Equation: measured transimpedance number"></crossref> or to divide the amplitude of the signal by the factor from <crossref toid="Equation: amplitude to Coulomb factor measured"></crossref>. In doing so for the <siglas>LGAD</siglas> signal in <crossref toid="Figure: waveforms"></crossref> (the one measured with the <em>Chubut&nbsp;2</em> board) we obtain 30±1&nbsp;fC using the integral under the peak<footnote>I.e. the <em>Collected charge&nbsp;(V&nbsp;s)</em>.</footnote> and 16±0.7&nbsp;fC when using the amplitude which is clearly in disagreement. I believe that this disagreement is related to the "falling edge issue" discussed in more detail in <crossref toid="Waveforms"></crossref>, which for some reason is less noticeable with the small signals from a PIN diode while the large signals from an <siglas>LGAD</siglas> are more affected.</p>
+
+<p>For the time being I will use the amplitude of the signals and <crossref toid="Equation: amplitude to Coulomb factor measured"></crossref> in order to obtain the charge in Coulomb. The reason I believe more to the amplitude than to the integral-under-the-peak measurement is that the issue seems to be related to the falling edge while the rising edge seems to be working fine (see <crossref toid="Waveforms"></crossref>).</p>
+
+<h2>Waveforms</h2>
+
+<p>The critical aspect of the board in terms of prformance is the fact that it behaves well as a broadband amplifier for use in the time domain. The waveforms thus yield valuable information. In <crossref toid="Figure: waveforms"></crossref> two waveforms can be seen. The two waveforms were obtained in our beta setup at <siglas>UZH</siglas> using two identical <siglas>TI-LGAD</siglas>s. The first signal is using the <em>Chubut&nbsp;1</em> readout board while the second signal is with a <em>Chubut&nbsp;2</em> board. </p>
+
+<float class="Figure" id="Figure: waveforms">
+	<div style="display: flex; flex-wrap: wrap;">
+		<iframe class="plotly" style="min-width: 1111px;" src="media/waveforms/chubut_1.html"></iframe>
+		<iframe class="plotly" style="min-width: 1111px;" src="media/waveforms/chubut_2.html"></iframe>
+	</div>
+	<floatcaption>Typical waveforms obtained with <siglas>LGAD</siglas>s mounted in each board. The first waveform was obtained with a <em>Chubut&nbsp;1</em> board while the second one with a <em>Chubut&nbsp;2</em>.</floatcaption>
+</float>
+
+<p>When looking at the signals in <crossref toid="Figure: waveforms"></crossref> it is possible to notice that the rising edge is similar but the falling edge in the Chubut&nbsp;2 case is slower. I observed this not only in the example signal shown but in all cases, and this probably accounts for the non agreement in the <em>effective transimpedance</em> discussed in <crossref toid="Transimpedance"></crossref>. The reason for this is still unknown to me.</p>
+
+<p>To perform timing measurements (in the way we usually do it) the most critical part of the waveforms is the rising edge. Despite the good looking rising edge from <crossref toid="Figure: waveforms"></crossref>, a little bit more quantitative comparison is shown in <crossref toid="Figure: rise time comparison"></crossref> where the rise time distribution for two measurements performed with each board, both in similar conditions, is compared. Here we see that the rising edge is slightly slower in the Chubut&nbsp;2, but in practical terms this should not introduce any inconvenience.</p>
+
+<float class="Figure" id="Figure: rise time comparison">
+	<iframe class="plotly" src="media/rise_time_comparison.html"></iframe>
+	<floatcaption>Comparison of rise time measured with the older <em>Chubut&nbsp;1</em> board and the <em>Chubut&nbsp;2</em> board at 245&nbsp;V.</floatcaption>
+</float>
 
 <h2>Signal to noise ratio</h2>
 
-<p>A comparison of the <siglas>SNR</siglas> is shown in <crossref toid="Figure: SNR comparison"></crossref>. In this plot the <siglas>ECDF</siglas> for a single voltage measured with each board is shown. As seen the results are in essence the same.</p>
+<p>A comparison of the <siglas>SNR</siglas> is shown in <crossref toid="Figure: SNR comparison"></crossref>. Here the <siglas>SNR</siglas> is defined as the ratio between the amplitude of the signal and the noise measured in the region before the peak in the waveform. In this plot the <siglas>ECDF</siglas> for a single voltage measured with each board is shown. As seen the results are in essence the same.</p>
 
 <float class="Figure" id="Figure: SNR comparison">
 	<iframe class="plotly" src="media/SNR_comparison.html"></iframe>
