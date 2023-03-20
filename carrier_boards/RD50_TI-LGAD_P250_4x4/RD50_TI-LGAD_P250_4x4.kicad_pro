@@ -57,13 +57,7 @@
         }
       ],
       "drc_exclusions": [
-        "clearance|-1000000|500000|aeea6266-9f4f-4626-9677-9a52c46f2c85|16254f2c-bab9-4f9d-9c4b-6ece23b3f4a0",
-        "clearance|-2500000|500000|aeea6266-9f4f-4626-9677-9a52c46f2c85|0328a564-39eb-4b33-9408-624479ebf2eb",
-        "clearance|3500000|500000|aeea6266-9f4f-4626-9677-9a52c46f2c85|14ee8818-a3ee-4210-ae69-3d45d51c3055",
-        "hole_clearance|-6000000|-7000000|aeea6266-9f4f-4626-9677-9a52c46f2c85|ef72a533-954a-4a76-999c-9b983e910898",
-        "hole_clearance|6000000|-7000000|aeea6266-9f4f-4626-9677-9a52c46f2c85|79a39c31-c147-4cc2-922e-1a2033fa5b7a",
-        "solder_mask_bridge|0|530000|d86263e6-9dc5-4865-8b0a-ee76bda01c47|ac50bafa-25ea-4fe0-9bf0-f6d6eda00bdb",
-        "solder_mask_bridge|0|530000|f5728bec-b1af-4e86-9087-e364f4828d56|c5b12b03-59a3-4c1d-b00c-c5707d18ce19"
+        "solder_mask_bridge|0|530000|d86263e6-9dc5-4865-8b0a-ee76bda01c47|ac50bafa-25ea-4fe0-9bf0-f6d6eda00bdb"
       ],
       "meta": {
         "version": 2
@@ -492,7 +486,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "Carrier_1.step",
+      "step": "RD50_TI-LGAD_P250_4x4.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
