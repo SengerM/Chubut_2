@@ -60,7 +60,7 @@
 <p>Though these boards can get the job done, they present some inconveniences when the number of samples to be tested grows, as each time a new sample has to be tested, the old sample has to be removed thus destroying the wire bondings. As the number of times a sample can be wire bonded is finite, this makes it not only tedious but in some cases impossible to repeat a test on a sample that has previously been tested. Additionally, after some number of tested sensors the board as well wears and it cannot be further wire bonded<footnote>I have experienced this with several boards, that when new the wires stick perfectly to the bonding pads but after some number of usages it becomes impossible to wire bond them again. In some cases this <em>number of usages</em> was relatively large (say about ten) but in some other cases it was as low as only one usage. I believe this is related to some effect related to moisture with the cooling and warming cycles required for each test. But I still don't know it for sure.</footnote>, having to be replaced with a new one. In doing this we are discarding a whole board which completely operational except that the wires do not stick, which is not just pity but it also complicates the logistics because I found myself sometimes without useful boards and still with sensors to be tested. Furthermore the amplification provided by these boards is usually not enough to go straight into a digitizer (or an oscilloscope) and a 20&nbsp;dB second stage amplifier has to be used.</p>
 <p>To overcome these issues I decided to develop a new board from scratch, which is the <em>Chubut&nbsp;2</em> board. It incorporates a design with a carrier board&nbsp;+&nbsp;a main board. The main board hosts all the circuitry and connectors while the carrier board is a super-cheap board which only hosts the <siglas>DUT</siglas>. In this way the main board can be reused up to infinite times<footnote>Well, it probably has a limit but for sure it is more than 1e3 times according to the specifications of the components.</footnote> with different carriers. The fact that the carrier only hosts the <siglas>DUT</siglas> makes it very cheap (when compared with the main board, or with one of the other readout boards) and thus it is feasible to produce one carrier for each <siglas>DUT</siglas>, and even with different designs to adapt the wire bondings to the <siglas>DUT</siglas>'s layout. The current design possesses 4 independent (and identical) channels, and each channel has two amplification stages leading to a total of ~40&nbsp;dB voltage gain (on 50&nbsp;Ω input and output).</p>
 
-<p>In this document I present the reader with some information about this board.</p>
+<p>In this document I present the reader (i.e. probably me in the future) with some information about this board.</p>
 
 <h1>Board design and details</h1>
 
@@ -212,7 +212,7 @@ There is a disagreement with respect to the design value from <crossref toid="Eq
 	<floatcaption>Measured effective transimpedance (i.e. the quantity defined by <crossref toid="Equation: transimpedance measured"></crossref>) for different bias voltages and each of the four channels of the board using a PIN diode from the <siglas>TI-LGAD</siglas> production.</floatcaption>
 </float>
 
-<p>Since in this kind of setup with <siglas>LGAD</siglas>s the charge is, to the best of my knowledge, proportional to the amplitude of the signals, I performed the same kind of data analysis as shown in <crossref toid="Figure: transimpedance plot"></crossref> but instead of using the integral under the peak using the amplitude of the signals. The results are shwon in <crossref toid="Figure: transimpedance plot using amplitude"></crossref>. From this measurement:
+<p>Since in this kind of setup with <siglas>LGAD</siglas>s the charge is, to the best of my knowledge, proportional to the amplitude of the signals<footnote>See <crossref toid="Figure: peak integral to amplitude ratio"></crossref>.</footnote>, I performed the same kind of data analysis as shown in <crossref toid="Figure: transimpedance plot"></crossref> but instead of using the integral under the peak using the amplitude of the signals. The results are shwon in <crossref toid="Figure: transimpedance plot using amplitude"></crossref>. From this measurement:
 
 <equation id="Equation: amplitude to Coulomb factor measured">
 $$\text{charge in Coulomb}\approx\frac{\text{amplitude}}{\left(5.67\pm0.25\right)\times10^{12}}$$
@@ -229,7 +229,7 @@ $$\text{charge in Coulomb}\approx\frac{\text{amplitude}}{\left(5.67\pm0.25\right
 
 <p>In order to obtain the collected charge in Coulomb units it is possible either to divide the integral of the signal by the effective transimpedance from <crossref toid="Equation: measured transimpedance number"></crossref> or to divide the amplitude of the signal by the factor from <crossref toid="Equation: amplitude to Coulomb factor measured"></crossref>. In doing so for the <siglas>LGAD</siglas> signal in <crossref toid="Figure: waveforms"></crossref> (the one measured with the <em>Chubut&nbsp;2</em> board) we obtain 30±1&nbsp;fC using the integral under the peak<footnote>I.e. the <em>Collected charge&nbsp;(V&nbsp;s)</em>.</footnote> and 16±0.7&nbsp;fC when using the amplitude which is clearly in disagreement. I believe that this disagreement is related to the "falling edge issue" discussed in more detail in <crossref toid="Waveforms"></crossref>, which for some reason is less noticeable with the small signals from a PIN diode while the large signals from an <siglas>LGAD</siglas> are more affected.</p>
 
-<p>For the time being I will use the amplitude of the signals and <crossref toid="Equation: amplitude to Coulomb factor measured"></crossref> in order to obtain the charge in Coulomb. The reason I believe more to the amplitude than to the integral-under-the-peak measurement is that the issue seems to be related to the falling edge while the rising edge seems to be working fine (see <crossref toid="Waveforms"></crossref>).</p>
+<p>For the time being I will use the amplitude ofreason the signals and <crossref toid="Equation: amplitude to Coulomb factor measured"></crossref> in order to obtain the charge in Coulomb. The reason I find it more reliable than the integral-under-the-peak is that if the issue is related to the falling edge, as discussed in <crossref toid="Waveforms"></crossref>, then this should have a much stronger influence in the integral than in the amplitude itself.</p>
 
 <h2>Waveforms</h2>
 
@@ -264,6 +264,14 @@ $$\text{charge in Coulomb}\approx\frac{\text{amplitude}}{\left(5.67\pm0.25\right
 <h1>Conclusions</h1>
 
 <p>A multichannel readout board for <siglas>LGAD</siglas>s was developed with a novel interconnection mechanism that allows for an easy interchange between different samples. The produced version of the board has four channels, but it can easily be modified. Each channel has two amplifying stages implemented with integrated RF amplifiers thus providing enough amplification to connect the board straight into a digitizer or an oscilloscope. A time resolution measurement with an <siglas>LGAD</siglas> mounted in the new board was performed and the results show it is good. There is a disagreement between the expected transimpedance and the measured transimpedance which is still to be studied.</p>
+
+
+<h1 class="unnumbered">Additional stuff</h1>
+
+<float class="Figure" id="Figure: peak integral to amplitude ratio">
+	<iframe class="plotly" src="media/ratio.html"></iframe>
+	<floatcaption>Integral-under-the-peak to amplitude ratio (see <crossref toid="Figure: waveforms"></crossref> for the definition of these quantities). This shows that through most part of the voltage range the amplitude and the integral (charge) of the signal are proportional being the proportionality factor half the duration of the peak (area of a triangle), which is roughly triangular.</floatcaption>
+</float>
 
 <div id="references_list">
 	<h1 class="unnumbered">References</h1>
