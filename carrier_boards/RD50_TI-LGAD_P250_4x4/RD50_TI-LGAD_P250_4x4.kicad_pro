@@ -56,9 +56,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "solder_mask_bridge|0|530000|d86263e6-9dc5-4865-8b0a-ee76bda01c47|ac50bafa-25ea-4fe0-9bf0-f6d6eda00bdb"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -543,6 +541,6 @@
   ],
   "text_variables": {
     "board_name": "RD50_TI-LGAD_250_4x4",
-    "timestamp": "230227"
+    "timestamp": "230519"
   }
 }
