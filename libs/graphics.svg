@@ -28,8 +28,8 @@
      showborder="true"
      shape-rendering="auto"
      inkscape:zoom="4.1540006"
-     inkscape:cx="387.69854"
-     inkscape:cy="236.15788"
+     inkscape:cx="383.12464"
+     inkscape:cy="236.39862"
      inkscape:window-width="1920"
      inkscape:window-height="1054"
      inkscape:window-x="0"
@@ -84,7 +84,7 @@
        y="25.517105"
        style="stroke-width:4.46196" /><g
        id="g4690"
-       inkscape:export-filename="graphics_bottom.png"
+       inkscape:export-filename="graphics_bottom.svg"
        inkscape:export-xdpi="666"
        inkscape:export-ydpi="666"><g
          id="g4061"
@@ -128,7 +128,7 @@
        transform="matrix(0.23245662,0,0,0.23245662,91.750776,49.581292)"
        style="stroke-width:4.30188" /><g
        id="g3340"
-       inkscape:export-filename="graphics_top.png"
+       inkscape:export-filename="graphics_top.svg"
        inkscape:export-xdpi="666"
        inkscape:export-ydpi="666"><g
          id="g4071"

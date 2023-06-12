@@ -640,7 +640,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "",
+      "netlist": "../../../",
       "specctra_dsn": "",
       "step": "Chubut_2.step",
       "vrml": ""
